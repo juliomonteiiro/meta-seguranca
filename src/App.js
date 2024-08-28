@@ -1,5 +1,4 @@
-import React from 'react';
-import logo from './assets/images/metaseguranca.jpg';
+import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -8,15 +7,15 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-         Meta Segurança Eletrônica
+          Edit <code>src/App.js</code> and save to reload.
         </p>
         <a
           className="App-link"
-          href="http://www.metasegurancaeletronica.com.br/"
+          href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Acesse o site ridiculo
+          Learn React
         </a>
       </header>
     </div>
