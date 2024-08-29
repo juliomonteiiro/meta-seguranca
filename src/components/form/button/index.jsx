@@ -1,10 +1,16 @@
-import { ButtonHTMLAttributes, ReactNode } from "react";
+import  React  from "react";
 import "./main.css"
 
-const button = () =>{
-    return(
-        <div>Button</div>
-    )
-}
 
-export default button
+
+export function Button({children, className, ...props}) {
+
+  return (
+    <button
+      className={className + ' button'}
+      {...props}
+    >
+      {children}
+    </button>
+  )
+}
