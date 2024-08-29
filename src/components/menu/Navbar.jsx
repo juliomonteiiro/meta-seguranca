@@ -1,18 +1,20 @@
 import React from 'react'
 import './Navbar.css'
+import metaseguranca from '../../assets/images/metaseguranca.jpg'
 
 const Navbar = () => {
   return (
     <header className="header">
-      <a href="/" className="logo">Logo</a>
-
+      
       <nav className="navbar">
-        <a href="/">Home</a>
-        <a href="/">About</a>
-        <a href="/">Portifolio</a>
-        <a href="/">Services</a>
-        <a href="/">Contact</a>
-        <a href="/"></a>
+      <a href="/" className="logo"><img src={metaseguranca} alt="Logo" className="navbar-logo" /></a>
+
+        <a href="/" className="menu">Ínicio</a>
+        <a href="/" className="menu">Serviços</a>
+        <a href="/" className="menu">Sobre Nós</a>
+        <a href="/" className="menu">Produtos</a>
+        <a href="/" className="menu">Contato</a>
+        
       </nav>
 
     </header>

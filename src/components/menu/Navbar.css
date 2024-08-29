@@ -1,23 +1,29 @@
+
 .header {
     position: fixed;
     top: 0; 
     left: 0;
     width: 100%;
     padding: 20px 10%;
-    background: #eb1717;
+    background: transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
 }
 
-.logo {
+.navbar-logo {
+    width: 90px; /* Ajuste conforme necessário */
+  }
+
+.navbar .logo {
+    
     font-size: 32px;
     color: #fff;
     font-weight: 700;
 }
 
-.navbar a{
+.navbar a.menu{
     position: relative;
     font-size: 18px;
     color: #fff;
@@ -25,14 +31,14 @@
     margin-left: 40px;
 }   
 
-.navbar a::before{
+.navbar a.menu::before{
     content: '';
     position: absolute;
     top: 100%;
     left: 0;
     width: 0;
     height: 2px;
-    background-color: #fff;
+    background-color: #ff0000;
     transition: .3s;
 }
 
