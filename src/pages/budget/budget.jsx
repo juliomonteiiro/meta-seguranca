@@ -27,18 +27,19 @@ export function Budget() {
                     Mande uma mensagem para nós e faça um orçamento conosco
                 </h2>
             </div>
-            <form className="Form-budget">
-                <InputText placeholder="Nome" required />
-                <InputText placeholder="Empresa/Local" required />
-                <InputText placeholder="CPF/CNPJ" required />
-                <InputText placeholder="Telefone" required />
-                <InputText placeholder="E-mail" required />
-                <InputText placeholder="Endereço" required />
+            <form className="Form-budget" action="https://webhook.site/6b44bbe7-bebb-4d67-95f6-b7aa0ddcd693" method="post">
+                <InputText placeholder="Nome*" required />
+                <InputText placeholder="Empresa/Local*" required />
+                <InputText placeholder="CPF/CNPJ*" required />
+                <InputText placeholder="Telefone*" required />
+                <InputText placeholder="E-mail*" required />
+                <InputText placeholder="Endereço*" required />
                 <SelectInput 
                     options={solicitacaoOptions}
-                    placeholder="Tipo de serviço" 
+                    placeholder="Tipo de serviço*" 
+                    required
                 />
-                <TextArea placeholder="Solicitação"/>
+                <TextArea placeholder="Solicitação*" required/>
                 <Button text="ENVIAR" />
             </form>
         </div>

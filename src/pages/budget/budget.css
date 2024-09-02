@@ -18,6 +18,10 @@
     align-items: center; 
 }
 
+.meta-color {
+    color: #C62733;
+}
+
 .Title-budget h1 {
     font-weight: 600;
     color: #706B6B;
@@ -30,6 +34,43 @@
     font-size: 30px;
 }
 
-.meta-color {
-    color: #C62733;
-}
+@media (min-width: 320px) and (max-width: 480px){
+    .Title-budget h1 {
+        font-size: 25px;
+    }
+    
+    .Title-budget h2 {
+        font-size: 10px;
+    }
+  }
+  
+  @media (min-width: 481px) and (max-width: 767px) {
+    .Title-budget h1 {
+        font-size: 30px;
+    }
+    
+    .Title-budget h2 {
+        font-size: 15px;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 991px) {
+    .Title-budget h1 {
+        font-size: 45px;
+    }
+    
+    .Title-budget h2 {
+        font-size: 20px;
+    }
+  }
+
+  @media (min-width: 992px) and (max-width: 1200px){
+    .Title-budget h1 {
+        font-size: 55px;
+    }
+    
+    .Title-budget h2 {
+        font-size: 25px;
+    }
+  }
+  
