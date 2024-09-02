@@ -1,0 +1,1 @@
+Design do projeto no Figma: https://www.figma.com/design/gP8uMdIWx5XzHmTHN7J1eh/Untitled?node-id=0-1&node-type=CANVAS&t=2neu0RUMaHs75aBv-0
