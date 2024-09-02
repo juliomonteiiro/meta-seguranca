@@ -1,4 +1,39 @@
+.select {
+    width: 80%;
+}
 
-.select{
-    width: 100%;
+/* Estilo do contêiner do Select */
+.select-container .react-select__control {
+    background-color: #D9D9D9;
+    color: #706B6B;
+    border: none;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+    font-size: 20px;
+    font-weight: 400;
+    height: 60px;
+    border-radius: 53px;
+}
+
+/* Estilo do dropdown (menu) */
+.select-container .react-select__menu {
+    background-color: #D9D9D9;
+    border: none;
+}
+
+/* Estilo das opções */
+.select-container .react-select__option {
+    background-color: #D9D9D9;
+    color: #706B6B;
+}
+
+/* Estilo da opção quando está selecionada */
+.select-container .react-select__option--is-selected {
+    background-color: #D9D9D9;
+    color: #706B6B;
+}
+
+/* Estilo da opção quando está sendo focada (hover ou focus) */
+.select-container .react-select__option--is-focused {
+    background-color: #C62733;
+    color: #D9D9D9 ;
 }
