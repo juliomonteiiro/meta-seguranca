@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import "./main.css"
 
 
-export function TextArea({ className, errorMessage, showError, ...props }) {
+export function TextArea({ className, placeholder, errorMessage, showError, ...props }) {
 
   const [error, setError] = useState(showError);
   const [message, setMessage] = useState(errorMessage);
@@ -17,6 +17,7 @@ export function TextArea({ className, errorMessage, showError, ...props }) {
     <>
       <textarea 
         className={className + " div-input " + (error ? "error" : "")} 
+        placeholder={placeholder}
         {...props}
       >
       </textarea>

@@ -3,13 +3,14 @@ import "./main.css"
 
 
 
-export function Button({children, className, ...props}) {
+export function Button({children, className, text, ...props}) {
 
   return (
     <button
       className={className + ' button'}
       {...props}
     >
+      {text}
       {children}
     </button>
   )

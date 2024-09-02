@@ -1,10 +1,9 @@
 import  React  from "react";
 import Select from 'react-select';
-import OptionTypeBase from "react-select";
 import "./main.css"
 
 
-export function SelectInput({ className, options, showError, errorMessage, handleChange, optionSelected }) {
+export function SelectInput({ className, options, showError, errorMessage, handleChange, placeholder, optionSelected }) {
   return (
     <>
       <Select 
@@ -12,6 +11,7 @@ export function SelectInput({ className, options, showError, errorMessage, handl
         options={options}
         value={optionSelected}
         onChange={handleChange}
+        placeholder={placeholder}
       />
       {showError ? <p className="error-message">{errorMessage}</p> : <></>}
     </>

@@ -1,0 +1,35 @@
+.Container-budget {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.Form-budget {
+    width: 100%;
+    max-width: 1240px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center; 
+}
+
+.Title-budget h1 {
+    font-weight: 600;
+    color: #706B6B;
+    font-size: 70px;
+}
+
+.Title-budget h2 {
+    font-weight: 400;
+    color: #706B6B;
+    font-size: 30px;
+}
+
+.meta-color {
+    color: #C62733;
+}
