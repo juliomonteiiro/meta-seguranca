@@ -1,0 +1,11 @@
+.Services-Container{
+    width: 100%;
+    padding-top: 50px;
+    display: flex;
+}
+
+.Services-Container h1{
+    padding-left: 10%;
+    color: #706B6B;
+    font-weight: 600;
+}

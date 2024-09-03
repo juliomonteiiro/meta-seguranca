@@ -10,7 +10,6 @@ export function Button({children, className, text, ...props}) {
       className={className + ' button'}
       {...props}
     >
-      {text}
       {children}
     </button>
   )
