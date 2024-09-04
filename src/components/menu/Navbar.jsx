@@ -1,6 +1,7 @@
 import React from 'react'
 import './Navbar.css'
 import metaseguranca from '../../assets/images/metaseguranca.jpg'
+import {Button} from "../../components/form/button";
 
 const Navbar = () => {
   return (
@@ -15,8 +16,10 @@ const Navbar = () => {
         <a href="/" className="menu">Produtos</a>
         <a href="/" className="menu">Contato</a>
         
-      </nav>
-
+        </nav>
+      <div className="navbar">
+    <Button >Crie seu perfil</Button>
+    </div>
     </header>
   )
 }

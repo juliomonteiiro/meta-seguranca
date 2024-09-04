@@ -1,4 +1,3 @@
-
 .header {
     position: fixed;
     top: 0; 
@@ -7,23 +6,26 @@
     padding: 20px 10%;
     background: transparent;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-between; /* Espaço entre a logo e o botão */
+    align-items: center; /* Centraliza verticalmente todos os itens */
     z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    align-items: center; /* Centraliza verticalmente os itens dentro da navbar */
 }
 
 .navbar-logo {
     width: 90px; /* Ajuste conforme necessário */
-  }
-
-.navbar .logo {
-    
-    font-size: 32px;
-    color: #fff;
-    font-weight: 700;
 }
 
-.navbar a.menu{
+.navbar .logo {
+    font-size: 32px;
+    color: #fff;
+}
+
+.navbar a.menu {
     position: relative;
     font-size: 18px;
     color: #000000;
@@ -31,17 +33,26 @@
     margin-left: 40px;
 }   
 
-.navbar a.menu::before{
+.navbar a.menu::before {
     content: '';
     position: absolute;
     top: 100%;
     left: 0;
     width: 0;
     height: 2px;
-    background-color: #ff0000;
+    background-color: #C62733;
     transition: .3s;
 }
 
-.navbar a:hover::before{
+.navbar a:hover::before {
     width: 100%;
+}
+
+.navbar .button {
+    margin-left: auto; /* Alinha o botão à direita */
+    max-width: 48%;
+    min-width: 150px;
+    display: flex; /* Adiciona display flex para justificar o conteúdo se necessário */
+    justify-content: center; /* Centraliza o texto dentro do botão */
+    align-items: center;
 }
