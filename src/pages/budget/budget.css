@@ -12,12 +12,13 @@
     width: 240px;
     height: 70px;
     font-size: 35px;
+    border-style: none;
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
 .Form-budget {
     width: 100%;
-    max-width: 1240px;
+    max-width: 1000px;
     margin-top: 20px;
     display: flex;
     flex-direction: column;
