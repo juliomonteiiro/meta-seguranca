@@ -40,7 +40,7 @@ export function Budget() {
                     required
                 />
                 <TextArea placeholder="Solicitação*" required/>
-                <Button>Enviar</Button>
+                <Button className="Form-budget">Enviar</Button>
             </form>
         </div>
     )

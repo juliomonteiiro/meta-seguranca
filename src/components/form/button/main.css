@@ -1,16 +1,14 @@
-.button {
+.button{
+    border-radius: 4px;
     background-color: #C62733;
-    color: #FFFFFF;
-    width: 240px;
-    height: 70px;
-    font-size: 35px;
-    font-weight: 400;
     border-style: none;
-    border-radius: 20px;
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
     cursor: pointer;
-    transition: background-color 0.4s ease, background-image 0.4s ease; 
-}
+    padding: 10px;
+    color: white;
+    font-weight: 600;
+    transition: 0.2s;
+    width: 15%;
+  }
 
 .button:hover {
     background-image: linear-gradient(to top, #C62733, #E8545D);
