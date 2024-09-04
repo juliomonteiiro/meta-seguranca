@@ -14,11 +14,14 @@ const Navbar = () => {
         <a href="/" className="menu">Serviços</a>
         <a href="/" className="menu">Sobre Nós</a>
         <a href="/" className="menu">Produtos</a>
-        <a href="/" className="menu">Contato</a>
+        <a href="contato" className="menu">Contato</a>
         
         </nav>
+        <div className="navbar1">
+    <Button href="">Login</Button>
+    </div>
       <div className="navbar">
-    <Button >Crie seu perfil</Button>
+    <Button href="">Cadastra=se</Button>
     </div>
     </header>
   )

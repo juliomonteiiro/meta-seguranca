@@ -55,4 +55,22 @@
     display: flex; /* Adiciona display flex para justificar o conteúdo se necessário */
     justify-content: center; /* Centraliza o texto dentro do botão */
     align-items: center;
+    border-style: none;
 }
+
+.navbar1 .button {
+    margin-left:50%; /* Alinha o botão à direita */
+    max-width: 48%;
+    background-color: transparent;
+    color: #C62733;
+    border-color: #C62733;
+    min-width: 150px;
+    display: flex; /* Adiciona display flex para justificar o conteúdo se necessário */
+    justify-content: center; /* Centraliza o texto dentro do botão */
+    align-items: center;
+}
+.navbar1 .button:hover {
+    color: #fff;
+    border-style: none;
+}
+ 
