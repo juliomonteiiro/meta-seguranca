@@ -1,10 +1,17 @@
 import React from 'react'
+import { useEffect, useState } from "react";
 import './Navbar.css'
-import metaseguranca from '../../assets/images/metaseguranca.jpg'
+import metaseguranca from '../../assets/images/metaseguranca.png'
 import {Button} from "../../components/form/button";
+import LoadingAnimation from "../../components/loading-animation";
 
 const Navbar = () => {
+
+  const [refresh, setRefresh] = useState(true);
+  const [isLoading, setIsLoading ] = useState(true);
+
   return (
+   
     <header className="header">
       
       <nav className="navbar">
@@ -21,6 +28,7 @@ const Navbar = () => {
     <Button href="">Login</Button>
     </div>
       <div className="navbar">
+      
     <Button href="">Cadastra=se</Button>
     </div>
     </header>

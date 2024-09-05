@@ -4,7 +4,7 @@
     left: 0;
     width: 100%;
     padding: 20px 10%;
-    background: transparent;
+    background: #000;
     display: flex;
     justify-content: space-between; /* Espaço entre a logo e o botão */
     align-items: center; /* Centraliza verticalmente todos os itens */
@@ -28,7 +28,7 @@
 .navbar a.menu {
     position: relative;
     font-size: 18px;
-    color: #000000;
+    color: #ffffff;
     font-weight: 500;
     margin-left: 40px;
 }   
@@ -59,12 +59,13 @@
 }
 
 .navbar1 .button {
-    margin-left:50%; /* Alinha o botão à direita */
+    margin-left:30%; /* Alinha o botão à direita */
     max-width: 48%;
+    min-width: 150px;
     background-color: transparent;
     color: #C62733;
     border-color: #C62733;
-    min-width: 150px;
+    border-style: solid;
     display: flex; /* Adiciona display flex para justificar o conteúdo se necessário */
     justify-content: center; /* Centraliza o texto dentro do botão */
     align-items: center;
