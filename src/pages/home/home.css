@@ -1,0 +1,31 @@
+.Home-Container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.Home-Container img {
+    width: 100%;
+    height: auto;
+}
+
+.Title {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+}
+
+.Title h1 {
+    font-size: 70px;
+    font-weight: 900;
+    color: #fff;
+}
+
+.Title h2 {
+    font-size: 20px;
+    color: #fff;
+    margin-top: 10px;
+}

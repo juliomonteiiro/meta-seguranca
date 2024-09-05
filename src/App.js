@@ -3,11 +3,13 @@ import Navbar from './components/menu/Navbar'
 import { Budget } from './pages/budget/budget'
 import { Services } from './pages/services/services'
 import Footer  from './pages/footer/footer'
+import { Home } from './pages/home/home.page'
 
 
 const App = () => {
   return (
     <div>
+      <Home />
       <Navbar/>
       <Budget id="contato"/>
       <Services/>
