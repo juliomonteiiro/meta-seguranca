@@ -1,0 +1,89 @@
+import React, { useState, useEffect } from 'react';
+import { GoogleMap, LoadScript, InfoWindow } from '@react-google-maps/api';
+
+// Array de bibliotecas mantido fora do componente para evitar recarregamento
+const libraries = ['places'];
+
+// Definimos o estilo do container do mapa
+const containerStyle = {
+  width: '100%',
+  height: '400px',
+};
+
+// Coordenadas de localização do estabelecimento
+const location = {
+  lat: -23.55052,  // Latitude
+  lng: -46.633308, // Longitude
+};
+
+const GoogleMapsComponent = () => {
+  const [info, setInfo] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const fetchPlaceDetails = (map) => {
+    if (window.google && window.google.maps) { // Verificar se o google.maps está disponível
+      const service = new window.google.maps.places.PlacesService(map);
+      const request = {
+        placeId: 'ChIJ_VErsAjGyJQRgrrENEhi7II',  // Substitua pelo Place ID
+        fields: ['name', 'formatted_address', 'formatted_phone_number', 'opening_hours', 'website'],
+      };
+
+      service.getDetails(request, (place, status) => {
+        if (status === window.google.maps.places.PlacesServiceStatus.OK) {
+          setInfo(place);
+        }
+      });
+    }
+  };
+
+  // Usando o novo `AdvancedMarkerElement` para substituir `Marker`
+  useEffect(() => {
+    if (window.google && window.google.maps) { // Verificar se o google.maps está disponível
+      const map = new window.google.maps.Map(document.getElementById("map"), {
+        center: location,
+        zoom: 15,
+      });
+
+      // Criando um AdvancedMarkerElement para substituir o `Marker`
+      const marker = new window.google.maps.marker.AdvancedMarkerElement({
+        map,
+        position: location,
+      });
+
+      marker.addListener('click', () => {
+        setIsOpen(!isOpen);
+      });
+
+      fetchPlaceDetails(map);
+    }
+  }, []);
+
+  return (
+    <LoadScript googleMapsApiKey="AIzaSyAM3TBO_1oITW8z9Yw5VpD5dVYRdM8FrTw" libraries={libraries}>
+      <div id="map" style={containerStyle}></div>
+      {isOpen && info && (
+        <InfoWindow position={location} onCloseClick={() => setIsOpen(false)}>
+          <div className="info-window-content">
+            <h3>{info.name}</h3>
+            <p>{info.formatted_address}</p>
+            <p>{info.formatted_phone_number}</p>
+            {info.opening_hours && (
+              <ul className="opening-hours">
+                {info.opening_hours.weekday_text.map((day, index) => (
+                  <li key={index}>{day}</li>
+                ))}
+              </ul>
+            )}
+            <p>
+              <a href={info.website} target="_blank" rel="noopener noreferrer">
+                Website
+              </a>
+            </p>
+          </div>
+        </InfoWindow>
+      )}
+    </LoadScript>
+  );
+};
+
+export default GoogleMapsComponent;

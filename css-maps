@@ -1,0 +1,40 @@
+
+.map-container {
+    width: 100%; /* O mapa ocupará toda a largura disponível */
+    height: 400px; /* Altura fixa de 400px, pode ser alterada conforme necessidade */
+  }
+  
+  .info-window-content {
+    font-family: Arial, sans-serif;
+  }
+  
+  .info-window-content h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .info-window-content p {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  
+  .info-window-content a {
+    color: #1e90ff;
+    text-decoration: none;
+  }
+  
+  .info-window-content a:hover {
+    text-decoration: underline;
+  }
+  
+  .opening-hours {
+    list-style-type: none;
+    padding: 0;
+    margin: 5px 0;
+  }
+  
+  .opening-hours li {
+    font-size: 12px;
+  }
+  
