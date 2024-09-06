@@ -1,0 +1,24 @@
+.Container{
+    display: flex;
+    width: 70%;
+    height: 85px;
+    background-color: #C62733;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 24px;
+    font-size: 25px;
+    color: #F5F5F5;
+    gap: 15px;
+}
+
+.Container button{
+    color: #706B6B;
+    background-color: #F5F5F5;
+    border-style: none;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+    width: 185px;
+    height: 45px;
+    font-size: 20px;
+}
+

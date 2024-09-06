@@ -1,6 +1,7 @@
 import React from 'react';
 import './home.css';
 import backgroundImage from '../../assets/images/bg-img.png'
+import { Doubt } from '../../components/doubt/doubt';
 
 export function Home() {
     return (
@@ -15,6 +16,9 @@ export function Home() {
                         estabelecer com os colaboradores, clientes e parceiros uma relação de longo prazo, 
                         superando sempre as expectativas.
                     </h2>
+                </div>
+                <div className='Doubt'>
+                    <Doubt/>
                 </div>
         </div>
     );
