@@ -1,9 +1,75 @@
+/* Estilos gerais do footer */
 .footer {
     width: 100%;
     padding: 20px 10%;
     background: #000;
-    display: flex;
-    justify-content: space-between; /* Espaço entre a logo e o botão */
-    align-items: center; /* Centraliza verticalmente todos os itens */
     z-index: 100;
+}
+
+/* Estilos da section principal */
+.section {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas de tamanho igual */
+}
+
+/* Estilos da primeira seção */
+.sb-section1 {
+    grid-column: 1 / 2; /* Ocupa a primeira coluna */
+    padding: 10px; /* Opcional */
+}
+
+.sb-section1 h2 {
+    color: rgb(80, 80, 80);
+    margin: 0; /* Remove margens padrão */
+}
+
+.sb-section1 .maps {
+    border-color: rgb(255, 255, 255);
+    margin: 0; /* Remove margens padrão */
+}
+
+/* Estilos da segunda seção */
+.sb-section2 {
+    grid-column: 2 / 3; /* Ocupa a segunda coluna */
+    padding: 10px; /* Opcional */
+    border-color: #414040;
+    background-color: #050505;
+    border-style: groove;
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows: auto 1fr; /* Ajusta a altura das linhas */
+    gap: 10px; /* Espaço entre o título e os links */
+}
+
+/* Estilos para o contêiner de links dentro da segunda seção */
+.links-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas de tamanho igual */
+    gap: 10px; /* Espaço entre as colunas */
+}
+
+/* Estilos dos links */    
+.links {
+    margin: 0; /* Remove margens padrão */
+}
+
+.sb-section2 h1 {
+    color: #fff;
+    text-align: center;
+    margin: 0; /* Remove margens padrão do h1 */
+    grid-column: 1 / -1; /* Ocupa a largura total do contêiner */
+}
+
+.sb-section2 p {
+    color: #fff;
+    margin: 0; /* Remove margens padrão dos parágrafos */
+}
+
+.section1 {
+    margin-top: 10px;
+    text-align: center;   
+}
+
+.section1 p{
+    color: #fff;
 }

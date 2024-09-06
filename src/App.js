@@ -5,7 +5,6 @@ import { Services } from './pages/services/services'
 import Footer  from './components/footer/footer'
 import { Home } from './pages/home/home.page'
 
-
 const App = () => {
   return (
     <div>
@@ -14,6 +13,7 @@ const App = () => {
       <Budget id="contato"/>
       <Services/>
       <Footer />
+     
     </div>
   )
 }
