@@ -73,5 +73,11 @@
 .navbar1 .button:hover {
     color: #fff;
     border-style: none;
+    background-image: linear-gradient(to top, #C62733, #E8545D);
+    background-color: #E8545D;
 }
  
+.navbar .button:hover {
+    background-image: linear-gradient(to top, #C62733, #E8545D);
+    background-color: #E8545D;
+}

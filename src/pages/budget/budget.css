@@ -16,6 +16,11 @@
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
+.Form-budget .button:hover {
+    background-image: linear-gradient(to top, #C62733, #E8545D);
+    background-color: #E8545D;
+}
+
 .Form-budget {
     width: 100%;
     max-width: 1000px;

@@ -12,7 +12,7 @@
     gap: 15px;
 }
 
-.Container button{
+.Container .button{
     color: #706B6B;
     background-color: #F5F5F5;
     border-style: none;
@@ -22,3 +22,8 @@
     font-size: 20px;
 }
 
+.Container  .button:hover {
+    color: #fff;
+    border-style: none;
+    background-color: #706B6B;
+}

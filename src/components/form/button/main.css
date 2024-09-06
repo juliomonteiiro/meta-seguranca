@@ -9,7 +9,4 @@
     width: 15%;
   }
 
-.button:hover {
-    background-image: linear-gradient(to top, #C62733, #E8545D);
-    background-color: #E8545D;
-}
+
