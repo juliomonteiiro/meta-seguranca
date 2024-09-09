@@ -1,15 +1,15 @@
 .Container{
     display: flex;
-    width: 70%;
+    width: 60%;
     height: 85px;
     background-color: #C62733;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     border-radius: 24px;
-    font-size: 25px;
+    font-size: 30px;
     color: #F5F5F5;
-    gap: 15px;
+    gap: 20px;
 }
 
 .Container .button{
@@ -17,8 +17,8 @@
     background-color: #F5F5F5;
     border-style: none;
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
-    width: 185px;
-    height: 45px;
+    width: 195px;
+    height: 55px;
     font-size: 20px;
 }
 
@@ -27,3 +27,99 @@
     border-style: none;
     background-color: #706B6B;
 }
+
+  @media (min-width: 320px) and (max-width: 480px){
+    .Container .button{
+        width: 85px;
+        height: 25px;
+        font-size: 9px;
+    }
+
+    .Container{
+        width: 90%;
+        height: 60px;
+        font-size: 10px;
+        gap: 10px;
+        padding: 0 7px;
+    }
+  }
+
+  @media (min-width: 481px) and (max-width: 720px) {
+    .Container .button{
+        width: 100px;
+        height: 27px;
+        font-size: 12px;
+    }
+
+    .Container{
+        width: 90%;
+        height: 70px;
+        font-size: 11px;
+        gap: 10px;
+        padding: 0 7px;
+    }
+  }
+
+  @media (min-width: 721px) and (max-width: 767px) {
+    .Container .button{
+        width: 125px;
+        height: 35px;
+        font-size: 15px;
+    }
+
+    .Container{
+        width: 90%;
+        height: 70px;
+        font-size: 17px;
+        gap: 10px;
+        padding: 0 10px;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    .Container .button{
+        width: 150px;
+        height: 35px;
+        font-size: 15px;
+    }
+
+    .Container{
+        width: 80%;
+        height: 85px;
+        font-size: 17px;
+        gap: 15px;
+        padding: 0 10px;
+    }
+  }
+
+  @media (min-width: 992px) and (max-width: 1100px){
+    .Container .button{
+        width: 150px;
+        height: 35px;
+        font-size: 15px;
+    }
+
+    .Container{
+        width: 70%;
+        height: 85px;
+        font-size: 20px;
+        gap: 15px;
+        padding: 0 10px;
+    }
+  }
+
+  @media (min-width: 1101px) and (max-width: 1600px){
+    .Container .button{
+        width: 140px;
+        height: 35px;
+        font-size: 15px;
+    }
+
+    .Container{
+        width: 65%;
+        height: 85px;
+        font-size: 20px;
+        gap: 15px;
+        padding: 0 10px;
+    }
+  }

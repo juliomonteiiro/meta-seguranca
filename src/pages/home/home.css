@@ -42,39 +42,18 @@
     transform: translateY(-50%);
 }
 
-@media (min-width: 320px) and (max-width: 480px){
-    .Title h1 {
-        font-size: 3vw;
-    }
+@media (min-width: 481px) and (max-width: 720px) {
     
-    .Title h2 {
-        width: 100%;
-        font-size: 1.5vh;
-        text-align: justify;
-    }
-}
-  
-  @media (min-width: 481px) and (max-width: 767px) {
-    .Title h1 {
-        font-size: 3vw;
-    }
-    
-    .Title h2 {
-        width: 100%;
-        font-size: 1.7vh;
-        text-align: justify;
-    }
+  }
 
-}
+  @media (min-width: 721px) and (max-width: 767px) {
   
+  }
+
   @media (min-width: 768px) and (max-width: 991px) {
-    .Title h1 {
-        font-size: 4vw;
-    }
     
-    .Title h2 {
-        width: 80%;
-        font-size: 2.5vh;
-        text-align: justify;
-    }
+  }
+
+  @media (min-width: 992px) and (max-width: 1200px){
+    
   }
