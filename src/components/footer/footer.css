@@ -1,75 +1,136 @@
-/* Estilos gerais do footer */
+section-padding {
+    padding: 4rem 4rem;
+}
+
 .footer {
+    background-color:#2d2d32 ;
+}
+
+.sb__footer {
+    display: flex;
+    flex-direction: column;
+}
+
+.sb__footer-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
     width: 100%;
-    padding: 20px 10%;
-    background: #000;
-    z-index: 100;
+    text-align: left;
+    margin-bottom: 2rem;
 }
 
-/* Estilos da section principal */
-.section {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Duas colunas de tamanho igual */
+.sb__footer-links_div{
+    width: 250px;
+    margin: 3%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    color: aliceblue;
 }
 
-/* Estilos da primeira seção */
-.sb-section1 {
-    grid-column: 1 / 2; /* Ocupa a primeira coluna */
-    padding: 10px; /* Opcional */
+a {
+    color: rgb(99, 91, 163);
+    text-decoration: none;
 }
 
-.sb-section1 h2 {
-    color: rgb(80, 80, 80);
-    margin: 0; /* Remove margens padrão */
+.socialmedia {
+    display: flex;
+    flex-direction: row;
 }
 
-.sb-section1 .maps {
-    border-color: rgb(255, 255, 255);
-    margin: 0; /* Remove margens padrão */
+.socialmedia a{
+    font-size:  30px;
+    margin: 5px;
 }
 
-/* Estilos da segunda seção */
-.sb-section2 {
-    grid-column: 2 / 3; /* Ocupa a segunda coluna */
-    padding: 10px; /* Opcional */
-    border-color: #414040;
-    background-color: #050505;
-    border-style: groove;
-    border-radius: 10px;
-    display: grid;
-    grid-template-rows: auto 1fr; /* Ajusta a altura das linhas */
-    gap: 10px; /* Espaço entre o título e os links */
+.sb__footer-links_div h4 {
+    font-size: 20px;
+    line-height: 17px;
+    margin-bottom: 0.9rem;
 }
 
-/* Estilos para o contêiner de links dentro da segunda seção */
-.links-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Duas colunas de tamanho igual */
-    gap: 10px; /* Espaço entre as colunas */
+.sb__footer-links_div p {
+    font-size: 16px;
+    line-height: 15px;
+    margin: 0.5rem 0;
+    cursor: pointer;
 }
 
-/* Estilos dos links */    
-.links {
-    margin: 0; /* Remove margens padrão */
+.sb__footer-below {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 0.2rem;
 }
 
-.sb-section2 h1 {
-    color: #fff;
-    text-align: center;
-    margin: 0; /* Remove margens padrão do h1 */
-    grid-column: 1 / -1; /* Ocupa a largura total do contêiner */
+.sb__footer-below-links {
+    display: flex;
+    flex-direction: row;
 }
 
-.sb-section2 p {
-    color: #fff;
-    margin: 0; /* Remove margens padrão dos parágrafos */
+.sb__footer-below-links p{
+    font-size: 13px;
+    line-height: 15px;
+    margin-left: 2rem;
+    color: white;
+    font-weight: 600;
 }
 
-.section1 {
-    margin-top: 10px;
-    text-align: center;   
+hr {
+    color: white !important;
+    width: 100%;
 }
 
-.section1 p{
-    color: #fff;
+.sb__footer-copyright p {
+    font-size: 13px;
+    line-height: 15px;
+    color: rgb(255,255,255);
+    font-weight: 600;
+}
+
+@media screen and (max-width: 850px){
+    .sb__footer-heading h1 {
+        font-size: 44px;
+        line-height: 50px;
+    }
+}
+
+@media screen and (max-width: 550px){
+    .sb__footer-heading h1 {
+        font-size: 34px;
+        line-height: 42px;
+    }
+
+    .sb__footer-links div{
+        margin: 1rem 0;
+    }
+
+    .sb__footer-btn p{
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .sb__footer-below {
+        flex-direction: column;
+        justify-content: left;
+    }
+
+    .sb__footer-below-links {
+        flex-direction: column;
+    }
+
+    .sb__footer-below-links p{
+        margin-left: 0rem;
+        margin-right: 1rem;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .sb__footer-heading h1 {
+        font-size: 27px;
+        line-height: 38px;
+    }
 }
