@@ -2,11 +2,13 @@ import React from 'react';
 import './home.css';
 import backgroundImage from '../../assets/images/bg-img.png'
 import { Doubt } from '../../components/doubt/doubt';
+import { Search } from '../../components/search/search'
 
 export function Home() {
     return (
         <div className="Home-Container">
             <img src={backgroundImage} alt="Imagem de fundo" />
+                <Search/>
                 <div className='Title'>
                     <h1>
                         Temos a solução perfeita para sua segurança!
