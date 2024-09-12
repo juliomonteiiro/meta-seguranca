@@ -105,13 +105,12 @@
     .Container {
         width: 60%;
         height: 85px;
-        font-size: 23px;
-        gap: 20px;
+        font-size: 22px;
         padding: 0 7px;
     }
 
     .Container .button {
-        width: 195px;
+        width: 190px;
         height: 55px;
         font-size: 20px;
     }

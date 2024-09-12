@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./main.css";
+import "./doubt.css";
 import { Button } from "../form/button/index";
 import duvida from '../../assets/images/duvida.png';
 
@@ -13,7 +13,6 @@ export function Doubt() {
 
     window.addEventListener("resize", handleResize);
 
-    // Verifica a largura inicial da tela
     handleResize();
 
     return () => {
