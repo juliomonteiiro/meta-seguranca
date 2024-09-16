@@ -34,19 +34,19 @@ const Footer = () => {
                     </a>                
                 </div>   
                 <div className="sb__footer-links_div">
-                    <h4>Menu</h4>
+                    <h4>Produtos</h4>
                     <a href="">
-                        <p>Inicio</p>
+                        <p>Câmeras</p>
                     </a>
                     <a href="">
-                        <p>Serviços</p>
+                        <p>Sistemas</p>
                     </a>
                     <a href="">
-                        <p>Sobre Nós</p>
+                        <p>Tags</p>
                     </a>
                   
                     <a href="">
-                        <p>Contato</p>
+                        <p>Produtos</p>
                     </a>                
                 </div>   
                 <div className="sb__footer-links_div">
