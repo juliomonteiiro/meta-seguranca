@@ -4,6 +4,7 @@ import { Services } from './pages/services/services'
 import Footer  from './components/footer/footer'
 import { Home } from './pages/home/home.page'
 import About from './pages/about/about-page'
+import { Productbar } from './pages/Product-bar/Product-bar'
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       <Navbar/>
       <Home />
       <Services/>
+      <Productbar/>
       <About/>
       <Budget id="contato"/>
       <Footer />
