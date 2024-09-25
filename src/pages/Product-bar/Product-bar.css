@@ -18,18 +18,22 @@
 }
 
 .Product{
-    padding: 5%;
+    padding: 5% 2%;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 300px; 
+    height: 300px;
+    gap: 20px;
     border-radius: 5px;
     justify-content: center;
     align-items: center;
-    gap: 5px;
+    margin-bottom: 5%;
+    background-color: #ffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .Product img{
-    width: 150px;
+    width: 200px;
 }
 
 .Product h2{
@@ -38,13 +42,14 @@
 }
 
 .Button{
-    width: 40%;
+    width: 50%;
+    height: 25px;
     background-color: #C62733;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 .Button p{
@@ -55,4 +60,10 @@
 
 .Button img{
     width: 20px;
+}
+
+@media (width >= 1000px ) {
+    .Product-list{
+        gap: 1.5%;
+    }
 }

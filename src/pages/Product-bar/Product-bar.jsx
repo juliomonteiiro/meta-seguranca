@@ -1,6 +1,8 @@
 import React from "react"; 
-import "./Product-bar.css"
-import Arrow from "../../assets/images/right-arrow.png"
+import "./Product-bar.css";
+import Arrow from "../../assets/images/right-arrow.png";
+import Chaveiro from "../../assets/images/chaveiro.png";
+import Tag from "../../assets/images/tag.png";
 
 export function Productbar() {
 
@@ -8,13 +10,25 @@ export function Productbar() {
   const products = [
     {
         id: '1',
-        image: 'https://www.controlid.com.br/assets/images/controle-de-acesso/tag-uhf-pet-list.webp',
+        image: Tag,
         title: 'Etiqueta Adesiva Control ID',
         link: 'https://google.com',
     },
     {
         id: '2',
-        image: 'https://images.tcdn.com.br/img/img_prod/738352/90_chaveiro_p_aproximacao_intelbras_rfid_125_mhz_th_1000_5561_2_484ab602fa9ed45f896821907b2fc4c9.png',
+        image: Chaveiro,
+        title: 'Controle de proximidade Intelbras',
+        link: 'https://youtube.com',
+    },
+    {
+        id: '3',
+        image: Chaveiro,
+        title: 'Controle de proximidade Intelbras',
+        link: 'https://youtube.com',
+    },
+    {
+        id: '4',
+        image: Chaveiro,
         title: 'Controle de proximidade Intelbras',
         link: 'https://youtube.com',
     },
