@@ -29,6 +29,11 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
 }
 
 .icon {

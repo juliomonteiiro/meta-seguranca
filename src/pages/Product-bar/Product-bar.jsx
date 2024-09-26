@@ -51,6 +51,9 @@ export function Productbar() {
                     </div>
                 ))}
             </div>
+            <div className="All">
+                <a href="#">Ver todos...</a>
+            </div>
         </div>
     )
 }
