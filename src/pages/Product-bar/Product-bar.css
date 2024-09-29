@@ -56,6 +56,11 @@
     justify-content: space-around;
     align-items: center;
     border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Button:hover {
+    transform: scale(1.05);
 }
 
 .Button p{
