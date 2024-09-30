@@ -5,11 +5,13 @@ import { Doubt } from '../../components/doubt/doubt';
 import { Search } from '../../components/search/search'
 import Navbar from '../../components/menu/Navbar';
 
+
 export function Home() {
     return (
         <div className="Home-Container">
             <img src={backgroundImage} alt="Imagem de fundo" />
                 <Navbar/>
+
                 <Search/>
                 <div className='Title'>
                     <h1>
