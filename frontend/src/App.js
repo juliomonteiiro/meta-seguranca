@@ -12,6 +12,7 @@ import { Navigate } from 'react-router-dom';
 
 const App = () => {
   return (
+    <div>
     <Router>
       <Navbar /> {/* Adicionando a Navbar aqui */}
 
@@ -36,8 +37,9 @@ const App = () => {
         <Route path="/contact" element={<Budget id="contato" />} />
       </Routes>
 
-      <Footer />
+      
     </Router>
+    <Footer /></div>
   );
 }
 
