@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/meta-seguranca/static/css/main.a12a8419.css",
+    "main.js": "/meta-seguranca/static/js/main.863d878c.js",
+    "static/js/453.c89c3189.chunk.js": "/meta-seguranca/static/js/453.c89c3189.chunk.js",
+    "static/media/bg-img.png": "/meta-seguranca/static/media/bg-img.35fa52ade17ce32b6ac4.png",
+    "static/media/about.png": "/meta-seguranca/static/media/about.6e7f344e28b552702532.png",
+    "static/media/tag.png": "/meta-seguranca/static/media/tag.87ab99bfbcd8462b46f5.png",
+    "static/media/metaseguranca.png": "/meta-seguranca/static/media/metaseguranca.2e945dbc59a9808b422d.png",
+    "static/media/chaveiro.png": "/meta-seguranca/static/media/chaveiro.fd869c179527fa2a6aae.png",
+    "static/media/lexend-deca-latin-400-normal.woff": "/meta-seguranca/static/media/lexend-deca-latin-400-normal.f3e40c80804e32f88027.woff",
+    "static/media/lexend-deca-latin-ext-400-normal.woff": "/meta-seguranca/static/media/lexend-deca-latin-ext-400-normal.6238553a07e37728c042.woff",
+    "static/media/lexend-deca-latin-400-normal.woff2": "/meta-seguranca/static/media/lexend-deca-latin-400-normal.f1399a81a47fc70aeef0.woff2",
+    "static/media/lexend-deca-latin-ext-400-normal.woff2": "/meta-seguranca/static/media/lexend-deca-latin-ext-400-normal.101b9ebdf0cca265b51f.woff2",
+    "static/media/lexend-deca-vietnamese-400-normal.woff": "/meta-seguranca/static/media/lexend-deca-vietnamese-400-normal.b9cce44059d8a9eaaf8c.woff",
+    "static/media/lexend-deca-vietnamese-400-normal.woff2": "/meta-seguranca/static/media/lexend-deca-vietnamese-400-normal.62c0e07d2353afb0be07.woff2",
+    "index.html": "/meta-seguranca/index.html",
+    "main.a12a8419.css.map": "/meta-seguranca/static/css/main.a12a8419.css.map",
+    "main.863d878c.js.map": "/meta-seguranca/static/js/main.863d878c.js.map",
+    "453.c89c3189.chunk.js.map": "/meta-seguranca/static/js/453.c89c3189.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a12a8419.css",
+    "static/js/main.863d878c.js"
+  ]
+}
