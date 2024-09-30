@@ -1,8 +1,8 @@
-import React from "react";
-import "./budget.css"
+import React, { useState } from "react";
+import "./budget.css";
 import "@fontsource/lexend-deca"; 
-import {InputText} from "../../components/form/input";
-import {Button} from "../../components/form/button";
+import { InputText } from "../../components/form/input";
+import { Button } from "../../components/form/button";
 import { SelectInput } from "../../components/form/select-input";
 import { TextArea } from "../../components/form/text-area";
 
@@ -17,7 +17,33 @@ export function Budget() {
         { value: 'alarme', label: 'Alarme' },
     ];
 
-    return(
+    // Estado para o campo de telefone com formatação
+    const [phone, setPhone] = useState('');
+
+    // Função para formatar o telefone
+    const formatPhoneNumber = (value) => {
+        value = value.replace(/\D/g, ''); // Remove caracteres não numéricos
+
+        if (value.length > 10) {
+            value = value.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+        } else if (value.length > 5) {
+            value = value.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
+        } else if (value.length > 2) {
+            value = value.replace(/(\d{2})(\d{0,5})/, '($1) $2');
+        } else {
+            value = value.replace(/(\d*)/, '($1');
+        }
+
+        return value;
+    };
+
+    // Função para lidar com mudanças no campo de telefone
+    const handlePhoneChange = (e) => {
+        const formattedPhone = formatPhoneNumber(e.target.value);
+        setPhone(formattedPhone);
+    };
+
+    return (
         <div className="Container-budget">
             <div className="Title-budget">
                 <h1>
@@ -28,13 +54,23 @@ export function Budget() {
                 </h2>
             </div>
             <form className="Form-budget" action="https://webhook.site/6b44bbe7-bebb-4d67-95f6-b7aa0ddcd693" method="post">
-                <InputText placeholder="Nome*" required />
-                <InputText placeholder="Empresa/Local*" required />
-                <InputText placeholder="CPF/CNPJ*" required />
-                <InputText placeholder="Telefone*" required />
-                <InputText placeholder="E-mail*" required />
+                <InputText type="text" placeholder="Nome*" required />
+                <InputText type="text" placeholder="Empresa/Local*" required />
+                <InputText type="number" placeholder="CPF/CNPJ*" required />
+                
+                {/* Campo de telefone com formatação */}
+                <InputText 
+                    type="tel" 
+                    value={phone}
+                    onChange={handlePhoneChange} 
+                    maxLength="15" 
+                    placeholder="Telefone*" 
+                    required 
+                />
+
+                <InputText type="email" autocomplete="email" placeholder="E-mail*" required />
                 <InputText placeholder="Endereço*" required />
-                <SelectInput 
+                <SelectInput    
                     options={solicitacaoOptions}
                     placeholder="Tipo de serviço*" 
                     required
@@ -45,5 +81,5 @@ export function Budget() {
             <br />
             <br />
         </div>
-    )
+    );
 }
