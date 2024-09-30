@@ -5,6 +5,7 @@ import Footer  from './components/footer/footer'
 import { Home } from './pages/home/home.page'
 import About from './pages/about/about-page'
 import { Productbar } from './pages/Product-bar/Product-bar'
+import { Marketplace } from './pages/marketplace/marketplace'
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <Services/>
       <Productbar/>
       <About/>
+      <Marketplace/>
       <Budget id="contato"/>
       <Footer />
      

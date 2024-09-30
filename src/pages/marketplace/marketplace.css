@@ -1,0 +1,163 @@
+.Marketplace {
+    margin: 7% 0;
+}
+
+.Marketplace h1 {
+    padding-left: 10%;
+    color: #706B6B;
+    font-weight: 600;
+    margin-bottom: 2%;
+}
+
+.Filter {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5% 0;
+    background-color: #C62733;
+    margin: 5% 0;
+}
+
+.Search-bar {
+    display: flex;
+    background-color: rgba(217, 217, 217, 0.87);
+    border-radius: 5px;
+    padding: 8px;
+    align-items: center;
+    width: 70%;
+    height: 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Search-bar:hover {
+    transform: scale(1.05);
+}
+
+.Search-input {
+    flex: 1;
+    border: none;
+    background-color: transparent;
+    padding: 4px;
+    font-size: 12px;
+    color: white;
+}
+
+.Search-input::placeholder {
+    color: white;
+}
+
+.Search-input:focus {
+    outline: none;
+}
+
+.Search-bar img {
+    width: 22px;
+    height: 22px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.Category img {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.Category img:hover {
+    transform: scale(1.10);
+}
+
+.Container-category{
+    display: flex;
+    justify-content: flex-end;
+    margin: 3% 0;
+}
+.Category-list {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.Category-list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.Category-list li {
+    padding: 10px 0;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+}
+
+.Category-list li:hover {
+    background-color: #f1f1f1;
+}
+
+.Marketplace-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.Market-items {
+    padding: 5% 2%;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 300px;
+    gap: 20px;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4%;
+    background-color: #ffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Market-items:hover {
+    transform: scale(1.05);
+}
+
+.Market-items img {
+    width: 200px;
+}
+
+.Market-items h2 {
+    font-size: 15px;
+    color: #4E4848;
+}
+
+.Market-items p {
+    font-size: 15px;
+    color: #C62733;
+}
+
+.Button {
+    width: 40%;
+    min-height: 30px;
+    background-color: #C62733;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Button:hover {
+    transform: scale(1.05);
+}
+
+.Button p {
+    color: #ffff;
+    font-weight: 200;
+    font-size: 12px;
+}
