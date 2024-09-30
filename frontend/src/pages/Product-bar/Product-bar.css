@@ -47,8 +47,8 @@
     color: #4E4848;
 }
 
-.Button{
-    width: 60%;
+.Button-product{
+    width: 40%;
     min-height: 30px;
     background-color: #C62733;
     display: flex;
@@ -59,18 +59,18 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.Button:hover {
+.Button-product:hover {
     transform: scale(1.05);
 }
 
-.Button p{
+.Button-product p{
     color: #ffff;
     font-weight: 200;
     font-size: 12px;
 }
 
-.Button img{
-    width: 20px;
+.Button-product img{
+    width: 17px;
 }
 
 .All {

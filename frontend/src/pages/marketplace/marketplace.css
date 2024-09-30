@@ -14,7 +14,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 5% 0;
+    padding: 2% 0;
     background-color: #C62733;
     margin: 5% 0;
 }
@@ -68,16 +68,21 @@
     transform: scale(1.10);
 }
 
-.Container-category{
+.Container-category {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     margin: 3% 0;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
+
 .Category-list {
     background-color: #fff;
     border: 1px solid #ddd;
     padding: 15px;
     width: 200px;
+    height: auto; /* A altura deve ser automática para que se ajuste ao conteúdo */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -95,6 +100,20 @@
 
 .Category-list li:hover {
     background-color: #f1f1f1;
+}
+
+@media screen and (min-width: 1000px) {
+    .Content-container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .Container-category {
+        margin: 0 10px;
+        display: flex;
+        justify-content: flex-start; 
+        height: 100%;
+    }
 }
 
 .Marketplace-list {
