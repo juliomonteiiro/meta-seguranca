@@ -30,8 +30,6 @@ O projeto **Meta Segurança Eletrônica** tem como objetivo desenvolver um site 
 - **Ferramentas de Integração**:
 - APIs do Google
 
-## 📂 Estrutura do Projeto
-
 ## 📋 Backlogs do Produto
 
 Aqui está uma lista de tarefas a serem realizadas para o desenvolvimento do projeto:
@@ -88,3 +86,7 @@ Aqui está uma lista de tarefas a serem realizadas para o desenvolvimento do pro
 - Exibir informações do usuário
 - Preparar banner para FENETEC
 - Lean Canvas
+
+## 📂 Estrutura do Projeto
+
+
