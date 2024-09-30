@@ -22,9 +22,9 @@ export function Productbar() {
     },
     {
         id: '3',
-        image: Chaveiro,
-        title: 'Controle de proximidade Intelbras',
-        link: 'https://youtube.com',
+        image: Tag,
+        title: 'Etiqueta Adesiva Control ID',
+        link: 'https://google.com',
     },
     {
         id: '4',
@@ -44,7 +44,7 @@ export function Productbar() {
                         <div className="Product" key={product.id}>
                         <img src={product.image}/>
                         <h2>{product.title}</h2>
-                        <div className="Button" onClick={() => window.location.href = product.link}>
+                        <div className="Button-product" onClick={() => window.location.href = product.link}>
                             <p>Veja Mais</p>
                             <img src={Arrow}/>
                         </div>
