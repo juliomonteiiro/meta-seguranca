@@ -9,7 +9,7 @@ import { Productbar } from './pages/Product-bar/Product-bar'
 const App = () => {
   return (
     <div>
-      <Navbar/>
+      
       <Home />
       <Services/>
       <Productbar/>

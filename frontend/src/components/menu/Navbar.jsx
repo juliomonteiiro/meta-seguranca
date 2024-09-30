@@ -2,8 +2,9 @@ import React from 'react'
 import { useEffect, useState } from "react";
 import './Navbar.css'
 import metaseguranca from '../../assets/images/metaseguranca.png'
-import {Button} from "../../components/form/button";
-import LoadingAnimation from "../../components/loading-animation";
+import {Button} from "../form/button";
+import LoadingAnimation from "../loading-animation";
+
 
 const Navbar = () => {
 
@@ -21,7 +22,7 @@ const Navbar = () => {
         <a href="/" className="menu">Serviços</a>
         <a href="/" className="menu">Sobre Nós</a>
         <a href="/" className="menu">Produtos</a>
-        <a href="contato" className="menu">Contato</a>
+        <a href="/" className="menu">Contato</a>
         
         </nav>
         <div className="navbar1">
