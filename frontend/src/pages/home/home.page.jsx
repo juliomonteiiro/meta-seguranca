@@ -1,6 +1,6 @@
 import React from 'react';
 import './home.css';
-import backgroundImage from '../../assets/images/bg-img.png'
+import backgroundImage from '../../assets/images/background-mobile.jpg'
 import { Doubt } from '../../components/doubt/doubt';
 import { Search } from '../../components/search/search'
 
@@ -15,7 +15,7 @@ export function Home() {
                 <Search/>
                 <div className='Title'>
                     <h1>
-                        Temos a solução perfeita para sua segurança!
+                        Temos a solução perfeita para sua <strong>Segurança!</strong>
                     </h1>
                     <h2>
                         Fornecer soluções de segurança, tecnologia e eletrônica para os nossos clientes; 
