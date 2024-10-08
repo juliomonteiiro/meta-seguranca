@@ -1,0 +1,20 @@
+.User{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #D9D9D9;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.User:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.User img{
+    width: 30px;
+    height: auto;
+}

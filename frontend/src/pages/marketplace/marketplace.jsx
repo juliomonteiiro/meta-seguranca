@@ -4,6 +4,7 @@ import Chaveiro from "../../assets/images/chaveiro.png";
 import Tag from "../../assets/images/tag.png";
 import Searchimg from "../../assets/images/pesquisa.png";
 import Category from "../../assets/images/Category.png";
+import { Perfil } from "../../components/btn-perfil/btn-perfil";
 
 export function Marketplace() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -23,7 +24,7 @@ export function Marketplace() {
   }, []);
 
   useEffect(() => {
-    setShowCategories(windowWidth > 1000); // Mostra a lista de categorias em telas maiores
+    setShowCategories(windowWidth > 1000);
   }, [windowWidth]);
 
   const toggleCategories = () => {
@@ -37,6 +38,8 @@ export function Marketplace() {
     { id: "2", image: Chaveiro, title: "Controle de proximidade Intelbras", link: "https://youtube.com", price: "R$ 15,00", category: "Chaveiro" },
     { id: "3", image: Tag, title: "Etiqueta Adesiva Control ID", link: "https://google.com", price: "R$ 10,00", category: "Tag" },
     { id: "4", image: Chaveiro, title: "Controle de proximidade Intelbras", link: "https://youtube.com", price: "R$ 15,00", category: "Chaveiro" },
+    { id: "5", image: Tag, title: "Etiqueta Adesiva Control ID", link: "https://google.com", price: "R$ 10,00", category: "Tag" },
+    { id: "6", image: Chaveiro, title: "Controle de proximidade Intelbras", link: "https://youtube.com", price: "R$ 15,00", category: "Chaveiro" },
   ];
 
   const categories = ["Todos", "Tag", "Chaveiro", "Eletrônicos"];
@@ -51,7 +54,7 @@ export function Marketplace() {
     <div className="Marketplace">
       <h1>Produtos</h1>
 
-      <div className="Filter">
+      <div className="Header-marketplace">
         <div className="Search-bar">
           <input
             className="Search-input"
@@ -66,6 +69,9 @@ export function Marketplace() {
             <img src={Category} alt="Category Icon" />
           </div>
         )}
+        <div className="Perfil">
+          <Perfil/>
+        </div>
       </div>
 
       <div className="Content-container">
@@ -78,7 +84,6 @@ export function Marketplace() {
                     key={index}
                     onClick={() => {
                       setSelectedCategory(category);
-                      setShowCategories(false);
                     }}
                     style={{
                       fontWeight: selectedCategory === category ? "bold" : "normal",

@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import './Navbar.css';
-import metaseguranca from '../../assets/images/metaseguranca.png';
+import metaseguranca from '../../assets/images/Logo-branca.png';
 import { Button } from '../form/button';
 import { Link } from 'react-router-dom'; // Importando Link do React Router
 
