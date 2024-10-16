@@ -3,7 +3,7 @@ import "./marketplace.css";
 import Chaveiro from "../../assets/images/chaveiro.png";
 import Tag from "../../assets/images/tag.png";
 import Searchimg from "../../assets/images/pesquisa.png";
-import Category from "../../assets/images/Category.png";
+import { Category } from "./category/category";  // Importamos o novo componente
 
 export function Marketplace() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -61,36 +61,18 @@ export function Marketplace() {
           />
           <img src={Searchimg} alt="Search Icon" />
         </div>
-        {windowWidth <= 1000 && (
-          <div className="Category" onClick={toggleCategories}>
-            <img src={Category} alt="Category Icon" />
-          </div>
-        )}
       </div>
 
       <div className="Content-container">
-        {showCategories && (
-          <div className="Container-category">
-            <div className="Category-list">
-              <ul>
-                {categories.map((category, index) => (
-                  <li
-                    key={index}
-                    onClick={() => {
-                      setSelectedCategory(category);
-                      setShowCategories(false);
-                    }}
-                    style={{
-                      fontWeight: selectedCategory === category ? "bold" : "normal",
-                    }}
-                  >
-                    {category}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        )}
+        {/* Usamos o componente CategoryFilter */}
+        <Category
+          categories={categories}
+          selectedCategory={selectedCategory}
+          onSelectCategory={setSelectedCategory}
+          showCategories={showCategories}
+          toggleCategories={toggleCategories}
+          windowWidth={windowWidth}
+        />
 
         <div className="Marketplace-list">
           {filteredProducts.map((product) => (
