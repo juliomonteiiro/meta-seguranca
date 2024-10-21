@@ -89,4 +89,4 @@ Aqui está uma lista de tarefas a serem realizadas para o desenvolvimento do pro
 
 ## 📂 Estrutura do Projeto
 
-
+[Modelo de Conceitual de Dados](https://app.brmodeloweb.com/#!/publicview/6710055528f4fb86a48b7a96)

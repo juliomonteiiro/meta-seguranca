@@ -6,7 +6,6 @@ import Tag from "../../assets/images/tag.png";
 
 export function Productbar() {
 
-    // Lista de principais produtos
   const products = [
     {
         id: '1',

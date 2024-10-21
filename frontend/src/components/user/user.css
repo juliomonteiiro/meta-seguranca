@@ -1,0 +1,22 @@
+.User-icon {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.User{
+    background-color: #D9D9D9;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.User:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.User img {
+    width: 40px;  
+}

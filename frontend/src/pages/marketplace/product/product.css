@@ -1,0 +1,64 @@
+.Marketplace-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.Market-items {
+    padding: 5% 2%;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 300px;
+    gap: 20px;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4%;
+    background-color: #ffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Market-items:hover {
+    transform: scale(1.05);
+}
+
+.Market-items img {
+    width: 200px;
+}
+
+.Market-items h2 {
+    font-size: 15px;
+    color: #4E4848;
+}
+
+.Market-items p {
+    font-size: 15px;
+    color: #C62733;
+}
+
+.Button {
+    width: 40%;
+    min-height: 30px;
+    background-color: #C62733;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Button:hover {
+    transform: scale(1.05);
+}
+
+.Button p {
+    color: #ffff;
+    font-weight: 200;
+    font-size: 12px;
+}

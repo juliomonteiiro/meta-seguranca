@@ -1,0 +1,23 @@
+.Header-Container {
+    width: 100%;
+    padding: 1% 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+}
+
+.Header-Container img {
+    width: 120px;
+}
+
+@media (min-width: 1000px) {
+    .Header-Container {
+        padding: 1% 2%;
+    }
+
+    .Header-Container img {
+        width: 160px;
+    }
+}
