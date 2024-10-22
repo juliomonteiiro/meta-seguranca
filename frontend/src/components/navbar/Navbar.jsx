@@ -18,13 +18,15 @@ const Navbar = () => {
           <img src={metaseguranca} alt="Meta Segurança Eletrônica" className="navbar-logo" />
         </Link>
 
-        <div className="menu-toggle" onClick={toggleMenu}> {}
+        {/* Menu Toggle para dispositivos móveis */}
+        <div className="menu-toggle" onClick={toggleMenu}>
           <div className="bar"></div>
           <div className="bar"></div>
           <div className="bar"></div>
         </div>
 
-        <div className={`menu-items ${isMenuOpen ? 'open' : ''}`}> {}
+        {/* Links do Menu */}
+        <div className={`menu-items ${isMenuOpen ? 'open' : ''}`}>
           <Link to="/" className="menu">Início</Link>
           <Link to="/services" className="menu">Serviços</Link>
           <Link to="/about" className="menu">Sobre Nós</Link>
@@ -32,10 +34,13 @@ const Navbar = () => {
           <Link to="/contact" className="menu">Contato</Link>
         </div>
       </nav>
-      <Button href="/">Crie seu perfil</Button>
+
+      {/* Botão no topo */}
+      <div className="profile-button-container">
+        <Button className="botao" href="/registration"><Link to="/registration">Crie seu perfil</Link></Button>
+      </div>
     </header>
   );
 };
 
 export default Navbar;
-

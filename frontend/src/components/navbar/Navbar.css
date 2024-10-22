@@ -51,7 +51,7 @@
   width: 100%;
 }
 
-.navbar .button {
+.navbar .botao {
   margin-left: auto; 
   max-width: 48%;
   min-width: 150px;
@@ -61,7 +61,7 @@
   border-style: none;
 }
 
-.button {
+.botao {
   margin-left: 30%;
   max-width: 48%;
   min-width: 150px;
@@ -74,7 +74,7 @@
   align-items: center;
 }
 
-.button:hover {
+.botao:hover {
   color: #fff;
   border-style: none;
   background-image: linear-gradient(to top, #C62733, #E8545D);
