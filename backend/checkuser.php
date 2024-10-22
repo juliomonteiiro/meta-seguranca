@@ -16,29 +16,31 @@ if(mysqli_connect_error()){
     $eData = file_get_contents("php://input");
     $dData = json_decode($eData, true);
 
-    // Extrai os valores do JSON
+    // Extrai o valor do nome de usuário
     $user = $dData['user'];
-    $email = $dData['email'];
-    $pass = $dData['pass'];
 
     $result = "";        
 
-    // Verifica se os campos não estão vazios
-    if($user != "" && $email != "" && $pass != ""){
-        // Query de inserção
-        $sql = "INSERT INTO usuarios(nome, email, senha) VALUES('$user', '$email', '$pass')";
+    // Verifica se o campo usuário não está vazio
+    if($user != ""){
+        // Query para verificar se o usuário já está cadastrado
+        $sql = "SELECT * FROM usuarios WHERE nome='$user'";
         
         // Executa a query
         $res = mysqli_query($con, $sql);
-        
+
         if($res){
-            $result = "Usuário cadastrado com sucesso!";
+            // Verifica se o usuário já está no banco de dados
+            if(mysqli_num_rows($res) > 0){
+                $result = "Usuário já está cadastrado!";
+            } else {
+                $result = "Usuário não está cadastrado.";
+            }
         } else {
-            // Captura e exibe o erro do MySQL
-            $result = "Erro ao cadastrar usuário: " . mysqli_error($con);
+            $result = "Erro ao verificar o usuário: " . mysqli_error($con);
         }
     } else {
-        $result = "Todos os campos são obrigatórios.";
+        $result = "O nome de usuário não pode estar vazio.";
     }
 
     // Fecha a conexão

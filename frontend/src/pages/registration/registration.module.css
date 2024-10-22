@@ -1,0 +1,54 @@
+.reg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    margin-top: 100px;
+    background-image: url('../../assets/images/bg.jpeg');
+    background-size: cover;
+    background-position: center; 
+    margin-top: 0px;
+    background-repeat: no-repeat; 
+}
+
+ .registration{
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    width: 30%;
+    font-size: 1.5rem;
+    border-radius: 25px;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+}
+
+.form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    width: 50vw;
+    height: 70vh;
+    padding: 30px;
+    background-color: transparent;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.error{
+    color: red;
+}
+
+.success{
+    color: #22f33e;
+}
+
+h1{
+    color: #fff;
+    font-size: 36px;
+}
