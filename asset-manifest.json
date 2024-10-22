@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/meta-seguranca/static/css/main.dc6cc2e8.css",
-    "main.js": "/meta-seguranca/static/js/main.68bcc1b7.js",
+    "main.css": "/meta-seguranca/static/css/main.b86d408c.css",
+    "main.js": "/meta-seguranca/static/js/main.a63f0c46.js",
     "static/js/453.c89c3189.chunk.js": "/meta-seguranca/static/js/453.c89c3189.chunk.js",
+    "static/media/bg.jpeg": "/meta-seguranca/static/media/bg.81ae3462ef69fd0c6118.jpeg",
     "static/media/bg-img.png": "/meta-seguranca/static/media/bg-img.35fa52ade17ce32b6ac4.png",
     "static/media/about.png": "/meta-seguranca/static/media/about.6e7f344e28b552702532.png",
     "static/media/tag.png": "/meta-seguranca/static/media/tag.87ab99bfbcd8462b46f5.png",
@@ -15,12 +16,12 @@
     "static/media/lexend-deca-vietnamese-400-normal.woff": "/meta-seguranca/static/media/lexend-deca-vietnamese-400-normal.b9cce44059d8a9eaaf8c.woff",
     "static/media/lexend-deca-vietnamese-400-normal.woff2": "/meta-seguranca/static/media/lexend-deca-vietnamese-400-normal.62c0e07d2353afb0be07.woff2",
     "index.html": "/meta-seguranca/index.html",
-    "main.dc6cc2e8.css.map": "/meta-seguranca/static/css/main.dc6cc2e8.css.map",
-    "main.68bcc1b7.js.map": "/meta-seguranca/static/js/main.68bcc1b7.js.map",
+    "main.b86d408c.css.map": "/meta-seguranca/static/css/main.b86d408c.css.map",
+    "main.a63f0c46.js.map": "/meta-seguranca/static/js/main.a63f0c46.js.map",
     "453.c89c3189.chunk.js.map": "/meta-seguranca/static/js/453.c89c3189.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.dc6cc2e8.css",
-    "static/js/main.68bcc1b7.js"
+    "static/css/main.b86d408c.css",
+    "static/js/main.a63f0c46.js"
   ]
 }
