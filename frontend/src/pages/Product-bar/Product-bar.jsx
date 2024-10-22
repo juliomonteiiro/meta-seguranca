@@ -3,6 +3,7 @@ import "./Product-bar.css";
 import Arrow from "../../assets/images/right-arrow.png";
 import Chaveiro from "../../assets/images/chaveiro.png";
 import Tag from "../../assets/images/tag.png";
+import { Link } from "react-router-dom";
 
 export function Productbar() {
 
@@ -41,17 +42,17 @@ export function Productbar() {
             <div className="Product-list">
                 {products.map((product)=> (
                         <div className="Product" key={product.id}>
-                        <img src={product.image}/>
+                        <img src={product.image} alt=""/>
                         <h2>{product.title}</h2>
                         <div className="Button-product" onClick={() => window.location.href = product.link}>
                             <p>Veja Mais</p>
-                            <img src={Arrow}/>
+                            <img src={Arrow} alt=""/>
                         </div>
                     </div>
                 ))}
             </div>
             <div className="All">
-                <a href="#">Ver todos...</a>
+                <Link to="/">Ver todos...</Link>
             </div>
         </div>
     )

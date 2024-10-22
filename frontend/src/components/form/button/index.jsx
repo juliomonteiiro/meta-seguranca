@@ -1,7 +1,7 @@
 import  React  from "react";
 import "./main.css"
 
-export function Button({children, className, text, ...props}) {
+export function Button({children, className, ...props}) {
 
   return (
     <button

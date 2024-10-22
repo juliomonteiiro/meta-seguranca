@@ -1,10 +1,7 @@
-import  React  from "react";
-import { useEffect, useState } from "react";
-import "./main.css"
-
+import React, { useEffect, useState } from "react";
+import "./main.css";
 
 export function InputText({ className, errorMessage, showError, placeholder, ...props }) {
-
   const [error, setError] = useState(showError);
   const [message, setMessage] = useState(errorMessage);
 
@@ -15,14 +12,10 @@ export function InputText({ className, errorMessage, showError, placeholder, ...
 
   return (
     <>
-      <div className={className + " div-input " + (error ? "error" : "")}>
-      <input
-          className="Input"
-          placeholder={placeholder}
-          {...props} 
-        />
+      <div className={`${className} div-input ${error ? "error" : ""}`}>
+        <input className="Input" placeholder={placeholder} {...props} />
       </div>
-      {showError ? <p className="error-message">{message}</p> : <></>}
+      {error && <p className="error-message">{message}</p>}
     </>
-  )
+  );
 }

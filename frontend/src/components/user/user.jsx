@@ -6,7 +6,7 @@ export function User(){
     return(
         <div className="User-icon">
             <div className="User">
-            <img src={UserIcon}/>
+            <img src={UserIcon} alt=""/>
             </div>
         </div>
     )
