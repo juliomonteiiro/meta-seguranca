@@ -20,3 +20,14 @@
 .User img {
     width: 40px;  
 }
+
+@media (max-width: 590px){
+    .User{
+        width: 55px;
+        height: 55px;
+    } 
+
+    .User img {
+        width: 28px;  
+    }
+}

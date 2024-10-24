@@ -6,6 +6,7 @@ import { Home } from '../pages/home/home.page';
 import About from '../pages/about/about-page';
 import { Productbar } from '../pages/Product-bar/Product-bar';
 import { Marketplace } from '../pages/Marketplace/Marketplace';
+import { ProductPage } from '../pages/Marketplace/ProductPage/ProductPage';
 import { Registration } from '../pages/registration/registration.page';
 
 const AppRoutes = () => {
@@ -30,6 +31,7 @@ const AppRoutes = () => {
       <Route path="/products" element={<Marketplace />} />
       <Route path="/contact" element={<Budget id="contato" />} />
       <Route path="/registration" element={<Registration />} />
+      <Route path="/ProductPage" element={<ProductPage />} />
     </Routes>
   );
 };

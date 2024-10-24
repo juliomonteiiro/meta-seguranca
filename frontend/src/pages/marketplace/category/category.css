@@ -43,6 +43,13 @@
     color: #706B6B;
 }
 
+@media (max-width: 590px){
+    
+    .Category-Container img {
+        width: 35px;
+    }
+}
+
 @media (min-width: 1000px){
     .Category-Container{
         display: none;

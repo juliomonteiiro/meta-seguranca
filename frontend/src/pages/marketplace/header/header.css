@@ -9,7 +9,7 @@
 }
 
 .Header-Container img {
-    width: 120px;
+    width: 25%;
 }
 
 @media (min-width: 1000px) {

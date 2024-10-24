@@ -2,12 +2,11 @@
   display: flex;
   width: 100%;
   justify-content: center;
-  padding: 10px;
 }
 
 .Search-bar {
   display: flex;
-  width: 100%; /* O contêiner de busca ocupa toda a largura disponível */
+  width: 100%;
   background-color: rgba(217, 217, 217, 0.87);
   border-radius: 5px;
   padding: 10px;
@@ -20,23 +19,33 @@
 }
 
 .Search-input {
-  flex: 1; /* Faz com que o campo de entrada ocupe todo o espaço disponível */
+  flex: 1;
   border: none;
-  background-color: transparent; /* Fundo transparente para o input */
-  font-size: 16px; /* Tamanho da fonte */
-  color: white; /* Cor do texto */
+  background-color: transparent; 
+  font-size: 16px; 
+  color: white; 
 }
 
 .Search-input::placeholder {
-  color: white; /* Cor do placeholder */
+  color: white; 
 }
 
 .Search-input:focus {
-  outline: none; /* Remove o contorno padrão ao focar no input */
+  outline: none;
 }
 
 .Search-bar img {
-  width: 25px; /* Largura do ícone de busca */
-  height: 25px; /* Altura do ícone de busca */
-  cursor: pointer; /* Cursor em forma de ponteiro ao passar o mouse */
+  width: 25px; 
+  height: 25px;
+  cursor: pointer;
+}
+
+@media (max-width: 590px){
+  .Search-bar img {
+    display: none;
+  }
+
+  .Search-input {
+    font-size: 12px; 
+  }
 }

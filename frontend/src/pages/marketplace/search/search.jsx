@@ -13,7 +13,7 @@ export function Search({ setSearchTerm }) {
         <input
           className="Search-input"
           placeholder="Buscar produtos..."
-          onChange={handleInputChange} // Atualiza o searchTerm
+          onChange={handleInputChange}
         />
         <img src={Searchimg} alt="Search Icon" />
       </div>
