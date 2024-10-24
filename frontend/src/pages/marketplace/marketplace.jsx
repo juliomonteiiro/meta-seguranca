@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import './marketplace.css';
-import { Header } from "./header/header";
-import { ProductList } from "./product/product";
+import './Marketplace.css';
+import { Header } from "./Header/Header";
+import { ProductList } from "./Product/Product";
 import Chaveiro from "../../assets/images/chaveiro.png";
 import Tag from "../../assets/images/tag.png";
 

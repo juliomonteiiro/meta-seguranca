@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './category.css';
+import './Category.css';
 import CategoryIcon from "../../../assets/images/List-Category.png";
 
 export function Category({ setSelectedCategory }) {

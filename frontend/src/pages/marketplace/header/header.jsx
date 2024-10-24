@@ -1,9 +1,9 @@
 import React from "react";
-import './header.css';
+import './Header.css';
 import Logo from "../../../assets/images/metaseguranca.png";
-import { Search } from "../search/search";
+import { Search } from "../Search/Search";
 import { User } from "../../../components/user/user";
-import { Category } from "../category/category";
+import { Category } from "../Category/Category";
 
 export function Header({ setSelectedCategory, setSearchTerm }) {
     return (
