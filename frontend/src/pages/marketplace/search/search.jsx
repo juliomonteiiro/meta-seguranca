@@ -1,5 +1,5 @@
 import React from "react";
-import "./Search.css";
+import "./search.css";
 import Searchimg from "../../../assets/images/pesquisa.png";
 
 export function Search({ setSearchTerm }) {

@@ -1,5 +1,5 @@
 import React from "react";
-import './Product.css';
+import './product.css';
 
 export function ProductList({ products }) {  // Alterado para 'products'
     return (
