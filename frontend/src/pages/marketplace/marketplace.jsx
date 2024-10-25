@@ -4,7 +4,7 @@ import { Header } from "./header/header";
 import { ProductList } from "./product/product";
 import Chaveiro from "../../assets/images/chaveiro.png";
 import Tag from "../../assets/images/tag.png";
-import { useNavigate } from "react-router-dom";  // Importando o hook de navegação
+import { useNavigate } from "react-router-dom";
 
 export function Marketplace() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -47,8 +47,8 @@ export function Marketplace() {
     setSelectedCategory(category);
   };
 
-  const handleProductClick = (link) => {
-    navigate(link); // Redireciona para a página do produto
+  const handleProductClick = (product) => {
+    navigate(product.link, { state: { product } }); // Passa o objeto produto completo no estado
   };
 
   return (
@@ -67,9 +67,11 @@ export function Marketplace() {
         )}
         <ProductList 
           products={filteredProducts} 
-          onProductClick={handleProductClick} // Passando o handler para os produtos
+          onProductClick={handleProductClick} // Passa a função de navegação como prop
         />
       </div>
     </div>
   );
 }
+
+export default Marketplace;
