@@ -1,10 +1,17 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import './ProductPage.css';
+import { ProductButton } from "./ProductPage-Buttons/ProductPage-Buttons";
+import { ProductPageHeader } from "./ProductPage-Header/ProductPage-Header";
+import { ProductPageImage } from "./ProductPage-Image/ProductPage-Image";
+import { ProductPageTitle } from "./ProductPage-Title/ProductPage-Title";
+import { ProductPagePrice } from "./ProductPage-Price/ProductPage-Price";
+import { ProductPageDescription } from "./ProductPage-Description/ProductPage-Description";
+import { ProductPageNumber } from "./ProductPage-Buttons/ProductPage-Number/ProductPage-Number";
 
 export function ProductPage() {
     const location = useLocation();
-    const { product } = location.state || {}; // Extrai o objeto produto do estado de navegação
+    const { product } = location.state || {}; 
 
     if (!product) {
         return <div>Produto não encontrado</div>;
@@ -12,28 +19,20 @@ export function ProductPage() {
 
     return (
         <div className="ProductPage-Container">
-            <div className="ProductPage-Header">
-                <h1>{product.title}</h1>
-            </div>
+            <ProductPageHeader/>
             <div className="ProductPage-Content">
-                <div className="ProductPage-Image">
-                    <img src={product.image} alt={product.title} /> {/* Exibe a imagem do produto */}
-                </div>
+                <ProductPageImage/>
                 <div className="ProductPage-Tools">
-                    <div className="ProductPage-Title">
-                        <h2>{product.title}</h2> {/* Exibe o título */}
-                    </div>
-                    <div className="ProductPage-Price">
-                        <p>Preço: {product.price}</p> 
-                    </div>
+                    <ProductPageTitle/>
+                    <ProductPagePrice/>
                     <div className="ProductPage-Buttons">
-                        {/* Botões de ação */}
+                        <ProductPageNumber/>
+                        <ProductButton>Comprar Agora</ProductButton>
+                        <ProductButton className="addToCartButton">Adicionar ao Carrinho</ProductButton>
                     </div>
                 </div>
             </div>
-            <div className="ProductPage-Description">
-                <p>Descrição das funcionalidades do projeto.</p> {/* Descrição estática ou dinamicamente preenchida */}
-            </div>
+            <ProductPageDescription/>
         </div>
     );
 }

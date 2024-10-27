@@ -1,0 +1,19 @@
+.ProductPage-Description{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    gap: 20px;
+}
+
+.ProductPage-Description h2{
+    color: #4E4848;
+    font-size: 22px;
+}
+
+.ProductPage-Description h3{
+    color: #4E4848;
+    text-align: justify;
+    font-weight: 400;
+    font-size: 17px;
+}
