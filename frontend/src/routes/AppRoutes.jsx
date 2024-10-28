@@ -9,6 +9,7 @@ import { Marketplace } from '../pages/marketplace/marketplace';
 import { ProductPage } from '../pages/marketplace/ProductPage/ProductPage';
 import { Registration } from '../pages/registration/registration.page';
 
+
 const AppRoutes = () => {
   return (
     <Routes>
