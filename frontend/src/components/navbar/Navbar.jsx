@@ -32,13 +32,14 @@ const Navbar = () => {
           <Link to="/about" className="menu">Sobre Nós</Link>
           <Link to="/products" className="menu">Produtos</Link>
           <Link to="/contact" className="menu">Contato</Link>
+          <div className="profile-button-container">
+        <Button className="botao" href="/registration"><Link to="/registration">Crie seu perfil</Link></Button>
+      </div>
         </div>
       </nav>
 
       {/* Botão no topo */}
-      <div className="profile-button-container">
-        <Button className="botao" href="/registration"><Link to="/registration">Crie seu perfil</Link></Button>
-      </div>
+      
     </header>
   );
 };
