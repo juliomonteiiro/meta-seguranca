@@ -4,7 +4,7 @@ import { Header } from "./header/header";
 import { ProductList } from "./product/product";
 import Chaveiro from "../../assets/images/chaveiro.png";
 import Tag from "../../assets/images/tag.png";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
 
 export function Marketplace() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -15,10 +15,10 @@ export function Marketplace() {
   const navigate = useNavigate();
   
   const products = [
-    { id: "1", image: Tag, title: "Etiqueta Adesiva Control ID", link: "/ProductPage", price: "R$ 10,00", category: "Tag" },
-    { id: "2", image: Chaveiro, title: "Controle de proximidade Intelbras", link: "/ProductPage", price: "R$ 15,00", category: "Chaveiro" },
-    { id: "3", image: Tag, title: "Etiqueta Adesiva Control ID", link: "/ProductPage", price: "R$ 10,00", category: "Tag" },
-    { id: "4", image: Chaveiro, title: "Controle de proximidade Intelbras", link: "/ProductPage", price: "R$ 15,00", category: "Chaveiro" },
+    { id: "1", image: Tag, title: "Etiqueta Adesiva Control ID", link: "/ProductPage", price: "R$ 10,00", category: "Tag", infos: "Tag adesivo veicular da marca CONTROL ID frequência 125mhz. Específico para uso em antenas da marca CONTROL ID."},
+    { id: "2", image: Chaveiro, title: "Controle de proximidade Intelbras", link: "/ProductPage", price: "R$ 15,00", category: "Chaveiro", infos: "Tag RFID passivo somente leitura com furo para ser usado como chaveiro. Possui código único pré-gravado de 64bits. Feito em ABS é resistente e pode ser usado em aplicações de controle de acesso e segurança, programas de fidelidade, marcação de ponto, etc."},
+    { id: "3", image: Tag, title: "Etiqueta Adesiva Control ID", link: "/ProductPage", price: "R$ 10,00", category: "Tag", infos: "Tag adesivo veicular da marca CONTROL ID frequência 125mhz. Específico para uso em antenas da marca CONTROL ID." },
+    { id: "4", image: Chaveiro, title: "Controle de proximidade Intelbras", link: "/ProductPage", price: "R$ 15,00", category: "Chaveiro", infos: "Tag RFID passivo somente leitura com furo para ser usado como chaveiro. Possui código único pré-gravado de 64bits. Feito em ABS é resistente e pode ser usado em aplicações de controle de acesso e segurança, programas de fidelidade, marcação de ponto, etc."},
   ];
 
   const filteredProducts = products.filter((product) => {
@@ -47,8 +47,8 @@ export function Marketplace() {
     setSelectedCategory(category);
   };
 
-  const handleProductClick = (link) => {
-    navigate(link); // Redireciona para a página do produto
+  const handleProductClick = (product) => {
+    navigate(product.link, { state: { product } });
   };
 
   return (
@@ -67,9 +67,11 @@ export function Marketplace() {
         )}
         <ProductList 
           products={filteredProducts} 
-          onProductClick={handleProductClick} // Passando o handler para os produtos
+          onProductClick={handleProductClick}
         />
       </div>
     </div>
   );
 }
+
+export default Marketplace;

@@ -1,0 +1,36 @@
+.ProductPage-Image{
+    padding: 5%;
+    width: 275px;
+    height: 250px;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ProductPage-Image img{
+    width: 250px;
+}
+
+@media (min-width: 1000px){
+    .ProductPage-Image {
+        width: 330px;
+        height: 300px;
+    }
+
+    .ProductPage-Image img{
+        width: 275px;
+    }
+}
+
+@media (min-width: 1200px){
+    .ProductPage-Image {
+        width: 550px;
+        height: 500px;
+    }
+
+    .ProductPage-Image img{
+        width: 475px;
+    }
+}

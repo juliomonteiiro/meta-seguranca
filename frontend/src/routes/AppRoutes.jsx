@@ -5,9 +5,10 @@ import { Services } from '../pages/services/services';
 import { Home } from '../pages/home/home.page';
 import About from '../pages/about/about-page';
 import { Productbar } from '../pages/Product-bar/Product-bar';
-import { Marketplace } from '../pages/marketplace//marketplace';
-import { ProductPage } from '../pages/marketplace/ProductPage/ProductPage'
+import { Marketplace } from '../pages/marketplace/marketplace';
+import { ProductPage } from '../pages/marketplace/ProductPage/ProductPage';
 import { Registration } from '../pages/registration/registration.page';
+
 
 const AppRoutes = () => {
   return (

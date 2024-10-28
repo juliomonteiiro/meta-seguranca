@@ -1,0 +1,17 @@
+.ProductPage-Header{
+    width: 100%;
+    padding: 4%;
+}
+
+.ProductPage-Header h2{
+    color: #4E4848;
+    font-size: 22px;
+}
+
+@media (min-width: 750px){
+
+    .ProductPage-Header h2{
+        color: #4E4848;
+        font-size: 30px;
+    }
+}

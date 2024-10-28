@@ -1,0 +1,40 @@
+.ProductButton {
+    width: 100%;
+    height: 25px;
+    border-radius: 4px;
+    border-style: none;
+    background-color: #F53543;
+    color: white;
+    font-weight: light;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.5s ease, transform 0.5s ease;
+}
+
+.ProductButton:hover {
+    background-color: #d90429;
+    transform: scale(1.05);
+}
+
+@media (min-width: 750px){
+    .ProductButton {
+        width: 100%;
+        height: 30px;
+    }
+}
+
+@media (min-width: 1000px){
+    .ProductButton {
+        width: 90%;
+        height: 35px;
+        font-size: 15px
+    }
+}
+
+@media (min-width: 1200px){
+    .ProductButton {
+        width: 80%;
+        height: 40px;
+        font-size: 17px
+    }
+}

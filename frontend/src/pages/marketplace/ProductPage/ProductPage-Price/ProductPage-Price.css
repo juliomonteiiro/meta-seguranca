@@ -1,0 +1,17 @@
+.ProductPage-Price p{
+    font-size: 20px;
+    font-weight: light;
+    color: #4E4848;
+}
+
+@media (min-width: 1000px){
+    .ProductPage-Price p{
+        font-size: 25px;
+    }
+}
+
+@media (min-width: 1200px){
+    .ProductPage-Price p{
+        font-size: 30px;
+    }
+}
