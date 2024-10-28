@@ -5,6 +5,7 @@ import { FaFacebook } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { FaPhoneAlt } from "react-icons/fa";
+import {Link} from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -19,43 +20,43 @@ const Footer = () => {
                 </div>
                 <div className="sb__footer-links_div">
                     <h4>Menu</h4>
-                    <a href="">
+                    <Link to="">
                         <p>Inicio</p>
-                    </a>
-                    <a href="">
+                    </Link>
+                    <Link to="">
                         <p>Serviços</p>
-                    </a>
-                    <a href="">
+                    </Link>
+                    <Link to="">
                         <p>Sobre Nós</p>
-                    </a>
+                    </Link>
                   
-                    <a href="">
+                    <Link to="">
                         <p>Contato</p>
-                    </a>                
+                    </Link>                
                 </div>   
                 <div className="sb__footer-links_div">
                     <h4>Produtos</h4>
-                    <a href="">
+                    <Link to="">
                         <p>Câmeras</p>
-                    </a>
-                    <a href="">
+                    </Link>
+                    <Link to="">
                         <p>Sistemas</p>
-                    </a>
-                    <a href="">
+                    </Link>
+                    <Link to="">
                         <p>Tags</p>
-                    </a>
+                    </Link>
                   
-                    <a href="">
+                    <Link to="">
                         <p>Produtos</p>
-                    </a>                
+                    </Link>                
                 </div>   
                 <div className="sb__footer-links_div">
                     <h4>Contato</h4>
                         <div className="socialmedia"> 
-                        <a href=""><FaFacebook /></a>     
-                        <a href=""><IoLogoWhatsapp /></a>   
-                        <a href=""><FaPhoneAlt /></a>   
-                        <a href=""><FaEnvelope /></a>   
+                        <Link to=""><FaFacebook /></Link>     
+                        <Link to=""><IoLogoWhatsapp /></Link>   
+                        <Link to=""><FaPhoneAlt /></Link>   
+                        <Link to=""><FaEnvelope /></Link>   
                         </div>
                 </div>             
             </div>
@@ -69,10 +70,10 @@ const Footer = () => {
                     </p>
                 </div>
                 <div className="sb__footer-below-links">
-                    <a href=""><div><p>Termos & Condições</p></div></a>
-                    <a href=""><div><p>Privacidade</p></div></a>
-                    <a href=""><div><p>Segurança</p></div></a>
-                    <a href=""><div><p>Declaração de Cookies</p></div></a>
+                    <Link to=""><div><p>Termos & Condições</p></div></Link>
+                    <Link to=""><div><p>Privacidade</p></div></Link>
+                    <Link to=""><div><p>Segurança</p></div></Link>
+                    <Link to=""><div><p>Declaração de Cookies</p></div></Link>
                 </div>
             </div>
 
