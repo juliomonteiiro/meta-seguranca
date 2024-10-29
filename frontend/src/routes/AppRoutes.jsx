@@ -8,6 +8,9 @@ import { Productbar } from '../pages/Product-bar/Product-bar';
 import { Marketplace } from '../pages/marketplace/marketplace';
 import { ProductPage } from '../pages/marketplace/ProductPage/ProductPage';
 import { Registration } from '../pages/registration/registration.page';
+import { Login } from '../pages/login/login.page';
+import { ForgotPassword } from '../pages/forgot-password/forgot-password.page';
+import { RedefinePassword } from '../pages/redefine-password/redefine-password.page';
 
 
 const AppRoutes = () => {
@@ -32,7 +35,10 @@ const AppRoutes = () => {
       <Route path="/products" element={<Marketplace />} />
       <Route path="/contact" element={<Budget id="contato" />} />
       <Route path="/registration" element={<Registration />} />
-      <Route path="/ProductPage" element={<ProductPage />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route path="/redefine-password/" element={<RedefinePassword />} />
+      <Route path="/product-page" element={<ProductPage />} />
     </Routes>
   );
 };
