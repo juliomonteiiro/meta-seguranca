@@ -1,85 +1,69 @@
-import React from 'react'
-import './footer.css'
-import Maps from '../maps/index'
-import { FaFacebook } from "react-icons/fa";
-import { FaEnvelope } from "react-icons/fa";
-import { IoLogoWhatsapp } from "react-icons/io";
-import { FaPhoneAlt } from "react-icons/fa";
-import {Link} from "react-router-dom";
+import React from 'react';
+import './FooterStyles.css';
+import Maps from '../maps/index';
+import { FaFacebook, FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
+import { IoLogoWhatsapp } from 'react-icons/io';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-   <div className="footer">
-        <div className="sb__footer section-padding">
-            <div className="sb__footer-links">
-                <div className="sb__footer-links_div">
-                <h4>Nossa localização:</h4>
-                   
-                <Maps/>
-                  
-                </div>
-                <div className="sb__footer-links_div">
-                    <h4>Menu</h4>
-                    <Link to="">
-                        <p>Inicio</p>
-                    </Link>
-                    <Link to="">
-                        <p>Serviços</p>
-                    </Link>
-                    <Link to="">
-                        <p>Sobre Nós</p>
-                    </Link>
-                  
-                    <Link to="">
-                        <p>Contato</p>
-                    </Link>                
-                </div>   
-                <div className="sb__footer-links_div">
-                    <h4>Produtos</h4>
-                    <Link to="">
-                        <p>Câmeras</p>
-                    </Link>
-                    <Link to="">
-                        <p>Sistemas</p>
-                    </Link>
-                    <Link to="">
-                        <p>Tags</p>
-                    </Link>
-                  
-                    <Link to="">
-                        <p>Produtos</p>
-                    </Link>                
-                </div>   
-                <div className="sb__footer-links_div">
-                    <h4>Contato</h4>
-                        <div className="socialmedia"> 
-                        <Link to=""><FaFacebook /></Link>     
-                        <Link to=""><IoLogoWhatsapp /></Link>   
-                        <Link to=""><FaPhoneAlt /></Link>   
-                        <Link to=""><FaEnvelope /></Link>   
-                        </div>
-                </div>             
-            </div>
-            
-            <hr></hr>
-
-            <div className="sb__footer-below">
-                <div className="sb__footer-copyright">
-                    <p>
-                        @{new Date().getFullYear()} Meta Segurança Eletronica. Todos os direitos reservados.
-                    </p>
-                </div>
-                <div className="sb__footer-below-links">
-                    <Link to=""><div><p>Termos & Condições</p></div></Link>
-                    <Link to=""><div><p>Privacidade</p></div></Link>
-                    <Link to=""><div><p>Segurança</p></div></Link>
-                    <Link to=""><div><p>Declaração de Cookies</p></div></Link>
-                </div>
-            </div>
-
+    <footer className="footer">
+      <div className="footer-container">
+        <div className="footer-map">
+          <h4>Nossa localização:</h4>
+          <Maps />
         </div>
-   </div>
-  )
-}
 
-export default Footer
+        <div className="footer-links">
+          <div className="footer-section">
+            <h4>Menu</h4>
+            <nav>
+              <Link to="/">Início</Link>
+              <Link to="/servicos">Serviços</Link>
+              <Link to="/sobre">Sobre Nós</Link>
+              <Link to="/contato">Contato</Link>
+            </nav>
+          </div>
+
+          <div className="footer-section">
+            <h4>Produtos</h4>
+            <nav>
+              <Link to="/cameras">Câmeras</Link>
+              <Link to="/sistemas">Sistemas</Link>
+              <Link to="/tags">Tags</Link>
+              <Link to="/produtos">Todos os Produtos</Link>
+            </nav>
+          </div>
+
+          <div className="footer-section">
+            <h4>Contato</h4>
+            <div className="social-icons">
+              <Link to="/facebook" aria-label="Facebook"><FaFacebook /></Link>
+              <Link to="/whatsapp" aria-label="WhatsApp"><IoLogoWhatsapp /></Link>
+              <Link to="/telefone" aria-label="Telefone"><FaPhoneAlt /></Link>
+              <Link to="/email" aria-label="Email"><FaEnvelope /></Link>
+            </div>
+          </div>
+        </div>
+
+        <hr className="footer-divider" />
+
+        <div className="footer-bottom">
+          <div className="footer-copyright">
+            <p>
+              @{new Date().getFullYear()} Meta Segurança Eletrônica. Todos os direitos reservados.
+            </p>
+          </div>
+          <div className="footer-legal">
+            <Link to="/termos">Termos & Condições</Link>
+            <Link to="/privacidade">Privacidade</Link>
+            <Link to="/seguranca">Segurança</Link>
+            <Link to="/cookies">Declaração de Cookies</Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
