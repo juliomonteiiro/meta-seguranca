@@ -8,6 +8,7 @@ import { Productbar } from '../pages/Product-bar/Product-bar';
 import { Marketplace } from '../pages/marketplace/marketplace';
 import { ProductPage } from '../pages/marketplace/ProductPage/ProductPage';
 import { Registration } from '../pages/registration/registration.page';
+import { CartPage } from '../pages/marketplace/CartPage/CartPage';
 
 
 const AppRoutes = () => {
@@ -33,6 +34,7 @@ const AppRoutes = () => {
       <Route path="/contact" element={<Budget id="contato" />} />
       <Route path="/registration" element={<Registration />} />
       <Route path="/ProductPage" element={<ProductPage />} />
+      <Route path="/Cart" element={<CartPage />} />
     </Routes>
   );
 };
