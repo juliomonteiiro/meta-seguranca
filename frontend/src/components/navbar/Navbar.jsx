@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import metaseguranca from '../../assets/images/metaseguranca.png';
+import metaseguranca from '../../assets/images/meta.png';
 import { Button } from '../form/button';
 import { Link } from 'react-router-dom';
-import './Navbar.css';
+import styles from './Navbar.module.css';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); 
@@ -11,35 +11,34 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen); 
   };
 
+  const handleLinkClick = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
-    <header className="header">
-      <nav className="navbar">
-        <Link to="/" className="logo">
-          <img src={metaseguranca} alt="Meta Segurança Eletrônica" className="navbar-logo" />
+    <header className={styles.header}>
+      <nav className={styles.navbar}>
+        <Link to="/" className={styles.logo}>
+          <img src={metaseguranca} alt="Meta Segurança Eletrônica" className={styles.logo} />
         </Link>
 
-        {/* Menu Toggle para dispositivos móveis */}
-        <div className="menu-toggle" onClick={toggleMenu}>
-          <div className="bar"></div>
-          <div className="bar"></div>
-          <div className="bar"></div>
+        <div className={styles.menuToggle} onClick={toggleMenu} aria-label="Toggle menu">
+          <div className={styles.bar}></div>
+          <div className={styles.bar}></div>
+          <div className={styles.bar}></div>
         </div>
 
-        {/* Links do Menu */}
-        <div className={`menu-items ${isMenuOpen ? 'open' : ''}`}>
-          <Link to="/" className="menu">Início</Link>
-          <Link to="/services" className="menu">Serviços</Link>
-          <Link to="/about" className="menu">Sobre Nós</Link>
-          <Link to="/products" className="menu">Produtos</Link>
-          <Link to="/contact" className="menu">Contato</Link>
-          <div className="profile-button-container">
-        <Button className="botao" href="/registration"><Link to="/registration">Crie seu perfil</Link></Button>
-      </div>
+        <div className={`${styles.menuItems} ${isMenuOpen ? styles.open : ''}`}>
+          <Link to="/" className={styles.menu} onClick={handleLinkClick}>Início</Link>
+          <Link to="/services" className={styles.menu} onClick={handleLinkClick}>Serviços</Link>
+          <Link to="/about" className={styles.menu} onClick={handleLinkClick}>Sobre Nós</Link>
+          <Link to="/products" className={styles.menu} onClick={handleLinkClick}>Produtos</Link>
+          <Link to="/contact" className={styles.menu} onClick={handleLinkClick}>Contato</Link>
+          <div className={styles.profileButtonContainer}>
+          <Link to="/registration"><Button className={styles.botao}>Crie seu perfil</Button></Link>
+          </div>
         </div>
       </nav>
-
-      {/* Botão no topo */}
-      
     </header>
   );
 };
