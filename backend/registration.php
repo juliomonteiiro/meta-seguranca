@@ -6,11 +6,10 @@ header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
 $con = new mysqli("localhost", "root", "", "meta-seguranca");
 
-if(mysqli_connect_error()){
+if (mysqli_connect_error()) {
     echo mysqli_connect_error();
     exit();
 } else {
-
     $eData = file_get_contents("php://input");
     $dData = json_decode($eData, true);
 
@@ -20,12 +19,14 @@ if(mysqli_connect_error()){
 
     $result = "";        
 
+    if ($user != "" && $email != "" && $pass != "") {
+        // Hash da senha
+        $hashedPassword = password_hash($pass, PASSWORD_DEFAULT);
 
-    if($user != "" && $email != "" && $pass != ""){
-        $sql = "INSERT INTO usuarios(nome, email, senha) VALUES('$user', '$email', '$pass')";
+        $sql = "INSERT INTO usuarios(nome, email, senha) VALUES('$user', '$email', '$hashedPassword')";
         $res = mysqli_query($con, $sql);
         
-        if($res){
+        if ($res) {
             $result = "Usuário cadastrado com sucesso!";
         } else {
             $result = "Erro ao cadastrar usuário: " . mysqli_error($con);

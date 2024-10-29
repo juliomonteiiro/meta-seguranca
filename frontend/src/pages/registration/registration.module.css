@@ -31,13 +31,17 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    justify-items: center;
-    width: 50vw;
-    height: 70vh;
+    width: 90%;
+    max-width: 700px;
     padding: 30px;
     background-color: transparent;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     margin-top: 20px;
-    gap: 20px;
+}
+
+.login {
+    color: #C62733;
 }
 
 .error{
