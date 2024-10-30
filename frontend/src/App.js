@@ -4,6 +4,7 @@ import { BrowserRouter as Router, useLocation } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/footer';
 import AppRoutes from './routes/AppRoutes'; // Importando o novo arquivo de rotas
+import { CartProvider } from '../src/pages/marketplace/CartPage/CartContext/CartContext'; // Importando o contexto do carrinho
 
 const App = () => {
   const location = useLocation();
@@ -22,7 +23,9 @@ const App = () => {
 
 const AppWrapper = () => (
   <Router>
-    <App />
+    <CartProvider> {/* Envolvendo a aplicação com o CartProvider */}
+      <App />
+    </CartProvider>
   </Router>
 );
 

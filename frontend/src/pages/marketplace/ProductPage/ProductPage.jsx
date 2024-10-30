@@ -1,5 +1,5 @@
-import React from "react";
-import { useLocation, useNavigate } from "react-router-dom"; // Importe useNavigate
+import React, { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import './ProductPage.css';
 import { ProductButton } from "./ProductPage-Buttons/ProductPage-Buttons";
 import { ProductPageHeader } from "./ProductPage-Header/ProductPage-Header";
@@ -11,15 +11,17 @@ import { ProductPageNumber } from "./ProductPage-Buttons/ProductPage-Number/Prod
 
 export function ProductPage() {
     const location = useLocation();
-    const navigate = useNavigate(); // Chame useNavigate
+    const navigate = useNavigate(); 
     const { product } = location.state || {}; 
+    const [cartItems, setCartItems] = useState([]);
 
     if (!product) {
         return <div>Produto não encontrado</div>;
     }
 
     const handleAddToCart = () => {
-        navigate("/Cart"); // Direciona para a página do Carrinho
+        setCartItems((prevItems) => [...prevItems, product]);
+        navigate("/Cart", { state: { cartItems: [...cartItems, product] } });
     };
 
     return (
@@ -33,7 +35,7 @@ export function ProductPage() {
                     <div className="ProductPage-Buttons">
                         <ProductPageNumber/>
                         <ProductButton onClick={handleAddToCart}>Comprar Agora</ProductButton>
-                        <ProductButton className="addToCartButton" onClick={handleAddToCart} >Adicionar ao Carrinho</ProductButton>
+                        <ProductButton className="addToCartButton" onClick={handleAddToCart}>Adicionar ao Carrinho</ProductButton>
                     </div>
                 </div>
             </div>
