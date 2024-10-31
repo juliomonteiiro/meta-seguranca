@@ -7,17 +7,44 @@
     flex-direction: column;
 }
 
+.CartPage-Product{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 .CartPage-Content{
-    width: 80%;
+    width: 85%;
     background-color: white;
     border-radius: 10px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     padding: 20px;
+    gap: 15px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.CartPage-Title{
-    font-size: 24px;
+.CartPage-Description h2{
+    font-size: 12px;
+}
+
+.CartPage-Description h3{
+    font-size: 10px;
+}
+
+.CartPage-Description h4{
+    font-size: 11px;
+}
+
+.CartPage-Image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.CartPage-Image img{
+    width: 100px;
+    height: auto;
 }
