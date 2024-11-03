@@ -1,52 +1,26 @@
-// CartPage.jsx
 import React from "react";
-import "./CartPage.css";
-import { useCart } from "./CartContext/CartContext"; // Importando o contexto do carrinho
+import styles from "./CartPage.module.css";
+import { useCart } from "./CartContext/CartContext";
+import CartProduct from "./CartProduct/CartProduct";
+import CartFooter from "./CartFooter/CartFooter";
+import { useNavigate } from "react-router-dom";
 
-export function CartPage() {
-  const { cartItems, removeFromCart } = useCart(); // Obtendo `cartItems` e `removeFromCart` do contexto
+const CartPage = () => {
+  const { cartItems } = useCart();
+  const navigate = useNavigate();
 
   if (cartItems.length === 0) {
     return <div>O carrinho está vazio.</div>;
   }
 
   return (
-    <div className="CartPage-Container">
-      <div className="CartPage-Header">
-        {/* Logo da Meta */}
-        {/* Ícone de Usuário */}
-      </div>
-
-      {cartItems.map((product, index) => (
-        <div key={index} className="CartPage-Product">
-          <div className="CartPage-Content">
-            <div className="CartPage-Image">
-              <img src={product.image} alt={product.title} />
-            </div>
-            <div className="CartPage-Description">
-              <h2>{product.title}</h2>
-              <h3>Valor unitário: {product.price}</h3>
-              <h4>Valor total: R$ {(product.price * product.quantity).toFixed(2)}</h4>
-              <p>Quantidade: {product.quantity}</p>
-                <button onClick={() => removeFromCart(product.id)}>Remover</button>
-            </div>      
-          </div>
-        </div>
+    <div className={styles.CartPageContainer}>
+      {cartItems.map((product) => (
+        <CartProduct key={product.id} product={product} />
       ))}
-
-      <div className="CartPage-Footer">
-        <div className="CartPage-Price">
-          <p>Valor total do pedido: R$ {cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(2)}</p>
-          <p>Taxas/descontos: {/* Taxas/descontos */}</p>
-          <p>Valor final da compra: {/* Valor final */}</p>
-        </div>
-        <div className="CartPage-Buttons">
-          <button>Finalizar pedido</button>
-          <button>Continuar Comprando</button>
-        </div>
-      </div>
+      <CartFooter />
     </div>
   );
-}
+};
 
 export default CartPage;

@@ -1,0 +1,27 @@
+.CartProductDescription {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.CartProductDescription h2 {
+  font-size: 15px;
+  color: #4e4848;
+  font-weight: 400;
+}
+
+.CartProductDescription h3 {
+  font-size: 15px;
+  color: #4e4848;
+  font-weight: 600;
+}
+
+@media (min-width: 800px) {
+  .CartProductDescription {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+  }
+}

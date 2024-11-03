@@ -15,10 +15,10 @@ export function Marketplace() {
   const navigate = useNavigate();
   
   const products = [
-    { id: "1", image: Tag, title: "Etiqueta Adesiva Control ID", link: "/ProductPage", price: "R$ 10,00", category: "Tag", infos: "Tag adesivo veicular da marca CONTROL ID frequência 125mhz. Específico para uso em antenas da marca CONTROL ID."},
-    { id: "2", image: Chaveiro, title: "Controle de proximidade Intelbras", link: "/ProductPage", price: "R$ 15,00", category: "Chaveiro", infos: "Tag RFID passivo somente leitura com furo para ser usado como chaveiro. Possui código único pré-gravado de 64bits. Feito em ABS é resistente e pode ser usado em aplicações de controle de acesso e segurança, programas de fidelidade, marcação de ponto, etc."},
-    { id: "3", image: Tag, title: "Etiqueta Adesiva Control ID", link: "/ProductPage", price: "R$ 10,00", category: "Tag", infos: "Tag adesivo veicular da marca CONTROL ID frequência 125mhz. Específico para uso em antenas da marca CONTROL ID." },
-    { id: "4", image: Chaveiro, title: "Controle de proximidade Intelbras", link: "/ProductPage", price: "R$ 15,00", category: "Chaveiro", infos: "Tag RFID passivo somente leitura com furo para ser usado como chaveiro. Possui código único pré-gravado de 64bits. Feito em ABS é resistente e pode ser usado em aplicações de controle de acesso e segurança, programas de fidelidade, marcação de ponto, etc."},
+    { id: "1", image: Tag, title: "Etiqueta Adesiva Control ID", link: "/ProductPage", price: "10.00", category: Tag, infos: "Tag adesivo veicular da marca CONTROL ID frequência 125mhz. Específico para uso em antenas da marca CONTROL ID."},
+    { id: "2", image: Chaveiro, title: "Controle de proximidade Intelbras", link: "/ProductPage", price: "15.00", category: "Chaveiro", infos: "Tag RFID passivo somente leitura com furo para ser usado como chaveiro. Possui código único pré-gravado de 64bits. Feito em ABS é resistente e pode ser usado em aplicações de controle de acesso e segurança, programas de fidelidade, marcação de ponto, etc."},
+    { id: "3", image: Tag, title: "Etiqueta Adesiva Control ID", link: "/ProductPage", price: "10.00", category: "Tag", infos: "Tag adesivo veicular da marca CONTROL ID frequência 125mhz. Específico para uso em antenas da marca CONTROL ID." },
+    { id: "4", image: Chaveiro, title: "Controle de proximidade Intelbras", link: "/ProductPage", price: "15.00", category: "Chaveiro", infos: "Tag RFID passivo somente leitura com furo para ser usado como chaveiro. Possui código único pré-gravado de 64bits. Feito em ABS é resistente e pode ser usado em aplicações de controle de acesso e segurança, programas de fidelidade, marcação de ponto, etc."},
   ];
 
   const filteredProducts = products.filter((product) => {

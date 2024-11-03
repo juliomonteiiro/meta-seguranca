@@ -1,0 +1,11 @@
+.CartProductImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .CartProductImage img {
+    width: 100px;
+    height: auto;
+  }
+  
