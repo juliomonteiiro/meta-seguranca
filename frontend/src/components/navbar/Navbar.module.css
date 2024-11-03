@@ -111,6 +111,21 @@
   }
 }
 
+@media (min-width: 1400px) {
+  .botao {
+    margin-left: 200%;
+    max-width: 48%;
+    min-width: 150px;
+    background-color: transparent;
+    color: #C62733;
+    border-color: #C62733;
+    border-style: solid;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+  }
+}
+
 @media (max-width: 768px) {
   .navbar {
     display: contents; 
