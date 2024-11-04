@@ -1,27 +1,35 @@
-import React from 'react';
-import './home.css';
-import backgroundImage from '../../assets/images/bg-img.png'
+import React, { useState, useEffect } from 'react';
+import styles from './Home.module.css';
+import BackgroundDesktop from '../../assets/images/Background-Desktop.jpg';
+import BackgroundMobile from '../../assets/images/Background-Mobile.jpg';
 import { Doubt } from '../../components/doubt/doubt';
 
 export function Home() {
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
+
+    useEffect(() => {
+        function handleResize() {
+            setIsMobile(window.innerWidth <= 600);
+        }
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     return (
-
-        <div className="Home-Container">
-            <img src={backgroundImage} alt="Imagem de fundo" />
-                <div className='Title'>
-                    <h1>
-                        Temos a solução perfeita para sua segurança!
-                    </h1>
-                    <h2>
-                        Fornecer soluções de segurança, tecnologia e eletrônica para os nossos clientes; 
-                        estabelecer com os colaboradores, clientes e parceiros uma relação de longo prazo, 
-                        superando sempre as expectativas.
-                    </h2>
-                </div>
-                <div className='Doubt'>
-                    <Doubt/>
-                </div>
+        <div className={styles.HomeContainer}>
+            <img src={isMobile ? BackgroundMobile : BackgroundDesktop} alt="Imagem de fundo" />
+            <div className={styles.Title}>
+                <h1>
+                    Temos a solução perfeita para sua segurança!
+                </h1>
+                <h2>
+                    Serviço de qualidade e tecnologia avançada.
+                </h2>
+            </div>
+            <div className={styles.Doubt}>
+                <Doubt />
+            </div>
         </div>
-
     );
 }
