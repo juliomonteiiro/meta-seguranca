@@ -7,8 +7,8 @@
 }
 
 .CartRemoveButton button {
-  width: 85%;
-  height: 25px;
+  width: 170px;
+  height: 30px;
   color: white;
   background-color: #c62733;
   border: none;
@@ -21,11 +21,4 @@
 .CartRemoveButton button:hover {
   background-color: #d90429;
   transform: scale(1.05);
-}
-
-@media (min-width: 600px) {
-  .CartRemoveButton button {
-    width: 200px;
-    height: 30px;
-  }
 }

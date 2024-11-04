@@ -64,3 +64,5 @@ export function ProductPageNumber({
     </div>
   );
 }
+
+export default ProductPageNumber;
