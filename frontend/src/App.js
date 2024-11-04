@@ -1,9 +1,8 @@
-// src/App.jsx
 import React from 'react';
 import { BrowserRouter as Router, useLocation } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/footer';
-import AppRoutes from './routes/AppRoutes'; // Importing the routes
+import AppRoutes from './routes/AppRoutes'; // Importando as rotas
 
 const App = () => {
   const location = useLocation();

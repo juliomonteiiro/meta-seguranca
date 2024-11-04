@@ -11,7 +11,7 @@ import { Registration } from '../pages/registration/registration.page';
 import { Login } from '../pages/login/login.page';
 import { ForgotPassword } from '../pages/forgot-password/forgot-password.page';
 import { RedefinePassword } from '../pages/redefine-password/redefine-password.page';
-
+import Profile from '../pages/Profile/Profile'; // Importando a página de perfil
 
 const AppRoutes = () => {
   return (
@@ -39,6 +39,7 @@ const AppRoutes = () => {
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/redefine-password/" element={<RedefinePassword />} />
       <Route path="/product-page" element={<ProductPage />} />
+      <Route path="/profile" element={<Profile />} /> {/* Rota para o perfil */}
     </Routes>
   );
 };
