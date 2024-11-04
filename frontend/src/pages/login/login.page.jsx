@@ -1,10 +1,12 @@
+import React, { useState, useEffect } from 'react'; // Remova useContext
 import { Button } from "../../components/form/button";
 import { InputText } from "../../components/form/input";
 import { Link, useNavigate } from 'react-router-dom';
-import { useState, useEffect } from "react";
+import { useAuth } from '../../context/AuthContext'; // Mantenha esta importação
 import styles from "./login.module.css";
 
 export function Login() {
+    const { login } = useAuth(); // Obtém a função de login do contexto
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
@@ -44,16 +46,17 @@ export function Login() {
             return;
         }
 
-        const url = "http://localhost/backend/login.php"; 
+        const url = "http://localhost/backend/login.php";
         const headers = {
             "Accept": "application/json",
             "Content-Type": "application/json"
         };
-        const data = { email, pass: password };
-
+        const data = { email, senha: password }; // Corrige a chave para 'senha', conforme necessário
+        
         fetch(url, {
             method: "POST",
             headers,
+            credentials: 'include', // Necessário para enviar cookies de sessão
             body: JSON.stringify(data)
         })
             .then((response) => {
@@ -64,16 +67,18 @@ export function Login() {
             })
             .then((response) => {
                 // Verifica se o login foi bem-sucedido
-                if (response.result === "Login bem-sucedido!") {
-                    navigate("/meta-seguranca"); // Redireciona para /meta-seguranca
+                if (response.result === "success") {
+                    login({ email }); // Atualiza o estado de login no contexto
+                    navigate("/meta-seguranca"); // Redireciona após o login bem-sucedido
                 } else {
-                    setError(response.result); // Mostra a mensagem de erro
+                    setError(response.message); // Mostra a mensagem de erro específica
                 }
             })
             .catch((err) => {
                 setError("Ocorreu um erro ao fazer login: " + err.message);
             });
-    };
+        };
+        
 
     return (
         <div className={styles.log}>
