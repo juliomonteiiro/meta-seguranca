@@ -79,6 +79,28 @@ textarea.infoCard {
   color: #333;
 }
 
+.backLink {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 16px;
+  color: #c82333;
+  text-decoration: none;
+}
+
+.backLink:hover {
+  text-decoration: underline;
+}
+
+/* Botão de Logout */
+.logoutButton {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
   .profileContainer {

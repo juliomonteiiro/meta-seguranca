@@ -1,10 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import styles from './Profile.module.css';
+import { useAuth } from '../../context/AuthContext';
+import { Link, useNavigate } from 'react-router-dom';
+import { Button } from '../../components/form/button';
 
 const Profile = () => {
     const [userData, setUserData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const { logout } = useAuth();
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        logout(); // Realiza o logout
+        navigate('/'); // Redireciona para o início
+      };
 
     useEffect(() => {
         const fetchUserData = async () => {
@@ -19,10 +29,8 @@ const Profile = () => {
                 }
                 const data = await response.json();
 
-                // Formata data de nascimento para o padrão brasileiro
                 if (data.data_nasc) {
-                    data.data_nasc = new Date(data.data_nasc)
-                        .toLocaleDateString('pt-BR', { timeZone: 'UTC' });
+                    data.data_nasc = new Date(data.data_nasc).toLocaleDateString('pt-BR', { timeZone: 'UTC' });
                 }
 
                 setUserData(data);
@@ -36,12 +44,10 @@ const Profile = () => {
         fetchUserData();
     }, []);
 
-    // Função para formatar o CPF no padrão xxx.xxx.xxx-xx
     const formatCPF = (cpf) => {
         return cpf.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})$/, '$1.$2.$3-$4');
     };
 
-    // Função para formatar o número de telefone no padrão (xx)xxxxx-xxxx
     const formatPhone = (phone) => {
         return phone.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1)$2-$3');
     };
@@ -49,15 +55,17 @@ const Profile = () => {
     if (loading) return <div>Carregando...</div>;
     if (error) return <div>Erro: {error}</div>;
 
-
     return (
         <div className={styles.profile}>
+             <Link to="/" className={styles.backLink}>
+          &larr; Voltar ao Início
+        </Link>
             <div className={styles.profileContainer}>
                 <h1 className={styles.titleprofile}>Perfil do Usuário</h1>
                 {userData ? (
                     <>
                         <img
-                            src={userData.foto || 'default-profile-pic.png'}
+                            src={userData.foto_perfil_url || 'default-profile-pic.png'}
                             alt="Foto do perfil"
                             className={styles.profilePhoto}
                         />
@@ -73,7 +81,6 @@ const Profile = () => {
                                 <p className={styles.infoCard}>
                                     {userData.telefone ? formatPhone(userData.telefone) : ''}
                                 </p>
-
                             </div>
                             <div className={styles.column}>
                                 <span className={styles.infoLabel}>Data de Nascimento:</span>
@@ -84,6 +91,11 @@ const Profile = () => {
                                 </p>
                             </div>
                         </div> 
+                        <div className={styles.actions}>
+                        <Button onClick={handleLogout} className={styles.logoutButton}>
+                            Logout
+                        </Button>
+                    </div>
                     </>
                 ) : (
                     <p>Nenhum dado encontrado.</p>

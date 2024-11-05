@@ -26,6 +26,7 @@
 }
 
 .menu {
+  align-items: center;
   position: relative;
   font-size: 18px;
   color: #ffffff;
@@ -50,6 +51,20 @@
 
 .profileButtonContainer{
   width: auto;
+  justify-content: flex-end;
+}
+
+.profileImage {
+  width: 40px;
+  height: 40px;
+  margin-left: 1800%; 
+  border-radius: 50%;
+  cursor: pointer;
+  transition: border 0.3s ease;
+}
+
+.profileImage:hover {
+  border: 2px solid #C62733;
 }
 
 
@@ -96,7 +111,7 @@
   display: flex;
 }
 
-@media (min-width: 1700px) {
+@media (max-width: 1700px) {
   .botao {
     margin-left: 400%;
     max-width: 48%;
@@ -109,9 +124,18 @@
     justify-content: center; 
     align-items: center;
   }
+  .profileImage {
+    width: 40px;
+    height: 40px;
+    margin-left: 1200%; 
+    border-radius: 50%;
+    cursor: pointer;
+    transition: border 0.3s ease;
+  }
+  
 }
 
-@media (min-width: 1400px) {
+@media (max-width: 1400px ) {
   .botao {
     margin-left: 200%;
     max-width: 48%;
@@ -123,6 +147,14 @@
     display: flex; 
     justify-content: center; 
     align-items: center;
+  }
+  .profileImage {
+    width: 40px;
+    height: 40px;
+    margin-left: 1000%; 
+    border-radius: 50%;
+    cursor: pointer;
+    transition: border 0.3s ease;
   }
 }
 
@@ -170,4 +202,15 @@
     justify-content: center; 
     align-items: center;
   }
+ 
+  
+  .profileImage {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 0;
+    cursor: pointer;
+    transition: border 0.3s ease;
+  }
+  
 }

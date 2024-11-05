@@ -8,7 +8,6 @@ header("Access-Control-Allow-Credentials: true");
 
 $con = new mysqli("localhost", "root", "", "meta-seguranca");
 
-
 if ($con->connect_error) {
     echo json_encode(["result" => "Erro de conexão: " . $con->connect_error]);
     exit();
@@ -33,8 +32,16 @@ if (!empty($email)) {
 
         if ($res && $res->num_rows > 0) {
             $user = $res->fetch_assoc();
-            echo json_encode($user); // Retorna os dados do usuário
-        }    else {
+            
+            // Adicione o caminho completo para a imagem de perfil
+            if (!empty($user['foto_perfil'])) {
+                $user['foto_perfil_url'] = "http://localhost/backend/" . $user['foto_perfil'];
+            } else {
+                $user['foto_perfil_url'] = null; // Ou defina um caminho para uma imagem padrão, se desejar
+            }
+            
+            echo json_encode($user); // Retorna os dados do usuário com a URL da imagem de perfil
+        } else {
             echo json_encode(["result" => "Usuário não encontrado."]);
         }
     } else {
