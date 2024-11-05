@@ -1,0 +1,63 @@
+.AddProductContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    background-image: url('../../../assets/images/bg.jpeg');
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+h1 {
+    color: #fff;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.formGroup {
+    width: 50vw;
+    margin-bottom: 20px;
+}
+
+
+
+select {
+    width: 80%;
+    height: 90%;
+    padding: 10px;
+    border-style: none;
+    border-radius: 53px;
+    background-color: #D9D9D9;
+    color: #706B6B;
+    padding-left: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.addButton {
+    margin-top: 1rem;
+    padding: 0.7rem;
+    width: 50%;
+    font-size: 1.2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.addButton:hover {
+    background-color: #ca4949;
+}
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+}

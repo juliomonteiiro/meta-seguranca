@@ -1,17 +1,23 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const corsMiddleware = require('./middlewares/corsMiddleware');
-const budgetRoutes = require('./routes/budgetRoutes');
+const cors = require('cors');
+const path = require('path');
+const productRoutes = require('./routes/productRoutes');  // A rota onde está a lógica de upload de produtos
 
 const app = express();
 const PORT = 3001;
 
-// Middlewares
+// Middleware
+app.use(cors());
 app.use(bodyParser.json());
-app.use(corsMiddleware);
 
-// Rotas
-app.use('/api', budgetRoutes);
+// Serve as imagens da pasta 'uploads/products' quando solicitado
+// Isso torna as imagens acessíveis publicamente através de URLs como: 
+// http://localhost:3001/uploads/products/nome-da-imagem.jpg
+app.use('/uploads/products', express.static(path.join(__dirname, 'uploads', 'products')));
+
+// Rotas para produtos
+app.use('/api', productRoutes);
 
 // Iniciar o servidor
 app.listen(PORT, () => {

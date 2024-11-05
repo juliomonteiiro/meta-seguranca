@@ -15,6 +15,7 @@ import { ForgotPassword } from '../pages/forgot-password/forgot-password.page';
 import { RedefinePassword } from '../pages/redefine-password/redefine-password.page';
 import Profile from '../pages/Profile/Profile'; // Importando a página de perfil
 import { useAuth } from '../context/AuthContext';
+import AddProduct from '../pages/marketplace/AddProduct';
 
 
 const AppRoutes = () => {
@@ -44,8 +45,9 @@ const AppRoutes = () => {
       <Route path="/Cart" element={<CartPage />} />
       <Route path="/login" element={<Login />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
-      <Route path="/redefine-password/" element={<RedefinePassword />} />
+      <Route path="/redefine-password/:email" element={<RedefinePassword />} />
       <Route path="/ProductPage" element={<ProductPage />} />
+      <Route path="/addproduct" element={<AddProduct/>} />
       
       {/* Rota para o perfil - protegida */}
       <Route 

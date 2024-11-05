@@ -35,5 +35,6 @@
 /* Estilo da opção quando está sendo focada (hover ou focus) */
 .select-container .react-select__option--is-focused {
     background-color: #C62733;
-    color: #D9D9D9 ;
+    color: #D9D9D9;
 }
+    

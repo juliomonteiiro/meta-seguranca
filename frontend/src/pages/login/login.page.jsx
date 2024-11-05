@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'; // Remova useContext
 import { Button } from "../../components/form/button";
 import { InputText } from "../../components/form/input";
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext'; // Mantenha esta importação
 import styles from "./login.module.css";
 
@@ -108,9 +108,9 @@ export function Login() {
                 <Button className={styles.login} type="submit">
                     Entrar
                 </Button>
-                <p>
+                {/* <p>
                     <Link to="/forgot-password" className={styles.forgot}>Esqueci minha senha.</Link>
-                </p>
+                </p> */}
             </form>
         </div>
     );

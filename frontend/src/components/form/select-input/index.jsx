@@ -2,14 +2,25 @@ import React from "react";
 import Select from 'react-select';
 import "./main.css";
 
-export function SelectInput({ className, options, showError, errorMessage, handleChange, placeholder, optionSelected }) {
+export function SelectInput({
+  className,
+  options = [], // Garantir que `options` seja um array, se não for passado
+  showError,
+  errorMessage,
+  handleChange,
+  placeholder,
+  optionSelected
+}) {
+  // Garantir que o valor selecionado seja válido
+  const selectedOption = options.find(option => option.value === optionSelected);
+
   return (
     <>
-      <Select 
+      <Select
         className={`select-container ${className} select ${showError ? "error" : ""}`}
         classNamePrefix="react-select"
         options={options}
-        value={options.find(option => option.value === optionSelected)} // Encontra o objeto correto com base no value
+        value={selectedOption || null} // Se `selectedOption` for `undefined`, será passado `null` para o Select
         onChange={(selectedOption) => handleChange({ target: { name: "tipo_servico", value: selectedOption.value } })}
         placeholder={placeholder}
       />
@@ -17,3 +28,4 @@ export function SelectInput({ className, options, showError, errorMessage, handl
     </>
   );
 }
+

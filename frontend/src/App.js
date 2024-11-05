@@ -17,7 +17,8 @@ const App = () => {
     '/login',
     '/forgot-password',
     '/profile',
-    '/redefine-password/:token' // Use a pattern to match the token in the URL
+    '/addproduct',
+    '/redefine-password/:email' // Use a pattern to match the token in the URL
   ];
 
   const shouldHideNavbarFooter = hideNavbarFooterPaths.some(path => 

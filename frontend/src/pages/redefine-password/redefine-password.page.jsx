@@ -1,11 +1,11 @@
 import { Button } from "../../components/form/button";
 import { InputText } from "../../components/form/input";
 import { useState, useEffect } from "react";
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from "react-router-dom"; // Para pegar o e-mail da URL
 import styles from "./redefine-password.module.css";
 
 export function RedefinePassword() {
-    const { token } = useParams();
+    const { email } = useParams(); // Obter o e-mail da URL
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState(""); 
     const [error, setError] = useState("");
@@ -47,7 +47,7 @@ export function RedefinePassword() {
             "Accept": "application/json",
             "Content-Type": "application/json"
         };
-        const data = { token, password };
+        const data = { email, password };
 
         fetch(url, {
             method: "POST",
@@ -56,7 +56,7 @@ export function RedefinePassword() {
         })
             .then((response) => response.json())
             .then((response) => {
-                setMsg(response.result || "Senha redefinida com sucesso!");
+                setMsg(response.result);
             })
             .catch((err) => {
                 setError("Ocorreu um erro: " + err.message);
@@ -82,16 +82,13 @@ export function RedefinePassword() {
                 />
                 <InputText
                     type="password"
-                    placeholder="Confirme a Senha"
+                    placeholder="Confirmar Senha"
                     value={confirmPassword}
                     onChange={(e) => handleInputChange(e, "confirmPassword")}
                 />
                 <Button className={styles.redefine} type="submit">
                     Redefinir Senha
                 </Button>
-                <p>
-                    <Link to="/login" className={styles.login}>Voltar para o Login</Link>
-                </p>
             </form>
         </div>
     );

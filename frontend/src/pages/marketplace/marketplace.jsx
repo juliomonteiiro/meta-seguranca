@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import './marketplace.css';
 import { Header } from "./header/header";
 import { ProductList } from "./product/product";
-import Chaveiro from "../../assets/images/chaveiro.png";
-import Tag from "../../assets/images/tag.png";
 import { useNavigate } from "react-router-dom";
 
 export function Marketplace() {
@@ -11,25 +9,40 @@ export function Marketplace() {
   const [selectedCategory, setSelectedCategory] = useState("Todos");
   const [showCategories, setShowCategories] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);  // Novo estado para controlar o loading
 
   const navigate = useNavigate();
-  
-  const products = [
-    { id: "1", image: Tag, title: "Etiqueta Adesiva Control ID", link: "/ProductPage", price: "10.00", category: Tag, infos: "Tag adesivo veicular da marca CONTROL ID frequência 125mhz. Específico para uso em antenas da marca CONTROL ID."},
-    { id: "2", image: Chaveiro, title: "Controle de proximidade Intelbras", link: "/ProductPage", price: "15.00", category: "Chaveiro", infos: "Tag RFID passivo somente leitura com furo para ser usado como chaveiro. Possui código único pré-gravado de 64bits. Feito em ABS é resistente e pode ser usado em aplicações de controle de acesso e segurança, programas de fidelidade, marcação de ponto, etc."},
-    { id: "3", image: Tag, title: "Etiqueta Adesiva Control ID", link: "/ProductPage", price: "10.00", category: "Tag", infos: "Tag adesivo veicular da marca CONTROL ID frequência 125mhz. Específico para uso em antenas da marca CONTROL ID." },
-    { id: "4", image: Chaveiro, title: "Controle de proximidade Intelbras", link: "/ProductPage", price: "15.00", category: "Chaveiro", infos: "Tag RFID passivo somente leitura com furo para ser usado como chaveiro. Possui código único pré-gravado de 64bits. Feito em ABS é resistente e pode ser usado em aplicações de controle de acesso e segurança, programas de fidelidade, marcação de ponto, etc."},
-  ];
+
+  // Carregar os produtos da API quando o componente for montado
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch('http://localhost:3001/api/products'); // Requisição para a API
+        if (!response.ok) {
+          throw new Error("Erro ao carregar os produtos.");
+        }
+        const data = await response.json();
+        setProducts(data); // Armazena os produtos na variável de estado
+      } catch (error) {
+        console.error("Erro ao buscar os produtos: ", error);
+      } finally {
+        setLoading(false);  // Finaliza o carregamento
+      }
+    };
+
+    fetchProducts();  // Chama a função de fetch quando o componente for montado
+  }, []);
 
   const filteredProducts = products.filter((product) => {
     const matchesCategory = selectedCategory === "Todos" || product.category === selectedCategory;
-    const matchesSearch = product.title.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesSearch = product.title && product.title.toLowerCase().includes(searchTerm.toLowerCase());
     return matchesCategory && matchesSearch;
   });
 
   const categories = ["Todos", "Tag", "Chaveiro", "Eletrônicos"];
   const filteredCategories = categories.filter(category => 
-    category.toLowerCase().includes(searchTerm.toLowerCase())
+    category && category.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   useEffect(() => {
@@ -65,10 +78,15 @@ export function Marketplace() {
             ))}
           </ul>
         )}
-        <ProductList 
-          products={filteredProducts} 
-          onProductClick={handleProductClick}
-        />
+        {/* Se estiver carregando, exibe uma mensagem de loading */}
+        {loading ? (
+          <div className="Loading-Message">Carregando produtos...</div>
+        ) : (
+          <ProductList 
+            products={filteredProducts} 
+            onProductClick={handleProductClick}
+          />
+        )}
       </div>
     </div>
   );
