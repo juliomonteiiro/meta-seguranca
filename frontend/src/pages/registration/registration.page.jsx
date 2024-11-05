@@ -49,7 +49,8 @@ export function Registration() {
         pass2: "",
         cpf: "",
         phone: "",
-        birthdate: ""
+        birthdate: "",
+        profileImage: null
     });
     const [error, setError] = useState("");
     const [msg, setMsg] = useState("");
@@ -70,6 +71,13 @@ export function Registration() {
             [name]: updatedValue
         }));
         setError("");
+    };
+
+    const handleImageChange = (e) => {
+        setFormData((prev) => ({
+            ...prev,
+            profileImage: e.target.files[0]  // Armazena o arquivo de imagem
+        }));
     };
 
     const validateFields = () => {
@@ -105,18 +113,24 @@ export function Registration() {
 
         setLoading(true);
         try {
-            // Enviar apenas números para o backend
-            const cleanPhone = formData.phone.replace(/\D/g, ''); // Remove formatação
+            const formDataToSend = new FormData();
+            formDataToSend.append("user", formData.user);
+            formDataToSend.append("email", formData.email);
+            formDataToSend.append("pass", formData.pass2);
+            formDataToSend.append("cpf", formData.cpf);
+            formDataToSend.append("phone", formData.phone.replace(/\D/g, ''));
+            formDataToSend.append("birthdate", formData.birthdate);
+            if (formData.profileImage) {
+                formDataToSend.append("profileImage", formData.profileImage);  // Adiciona a imagem ao formData
+            }
+
             const response = await fetch(API_URLS.registration, {
                 method: "POST",
-                headers: {
-                    "Accept": "application/json",
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ ...formData, phone: cleanPhone, pass: formData.pass2 })
+                body: formDataToSend
             });
+
             const data = await response.json();
-            setMsg(data[0]?.result || "Cadastro realizado com sucesso!");
+            setMsg(data.result || "Cadastro realizado com sucesso!");
             setFormData({
                 user: "",
                 email: "",
@@ -124,36 +138,11 @@ export function Registration() {
                 pass2: "",
                 cpf: "",
                 phone: "",
-                birthdate: ""
+                birthdate: "",
+                profileImage: null
             });
         } catch (err) {
-            setError(ERROR_MESSAGES.registrationError + err.message);
-        } finally {
-            setLoading(false);
-        }
-    };
-
-    const checkAvailability = async (type) => {
-        const value = formData[type];
-        if (!value) {
-            setError(type === "user" ? ERROR_MESSAGES.userRequired : ERROR_MESSAGES.emailRequired);
-            return;
-        }
-
-        setLoading(true);
-        try {
-            const response = await fetch(API_URLS[type === "user" ? "checkUser" : "checkEmail"], {
-                method: "POST",
-                headers: {
-                    "Accept": "application/json",
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ [type]: value })
-            });
-            const data = await response.json();
-            setMsg(data[0]?.result || (type === "user" ? "Usuário disponível." : "Email disponível."));
-        } catch (err) {
-            setError(type === "user" ? ERROR_MESSAGES.checkUserError + err.message : ERROR_MESSAGES.checkEmailError + err.message);
+            setError("Erro ao registrar: " + err.message);
         } finally {
             setLoading(false);
         }
@@ -176,7 +165,6 @@ export function Registration() {
                     placeholder="Nome"
                     value={formData.user}
                     onChange={handleInputChange}
-                    onBlur={() => checkAvailability("user")}
                 />
                 <InputText
                     type="email"
@@ -184,7 +172,6 @@ export function Registration() {
                     placeholder="Email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    onBlur={() => checkAvailability("email")}
                 />
                 <InputText
                     type="text"
@@ -194,7 +181,6 @@ export function Registration() {
                     onChange={handleInputChange}
                     pattern="\d*"
                     title="Apenas números são permitidos."
-                    required
                 />
                 <InputText
                     type="text"
@@ -203,7 +189,6 @@ export function Registration() {
                     value={formData.phone}
                     onChange={handleInputChange}
                     title="Apenas números são permitidos."
-                    required
                 />
                 <InputText
                     type="date"
@@ -211,7 +196,6 @@ export function Registration() {
                     placeholder="Data de Nascimento"
                     value={formData.birthdate}
                     onChange={handleInputChange}
-                    required
                 />
                 <InputText
                     type="password"
@@ -219,7 +203,6 @@ export function Registration() {
                     placeholder="Senha"
                     value={formData.pass1}
                     onChange={handleInputChange}
-                    required
                 />
                 <InputText
                     type="password"
@@ -227,7 +210,13 @@ export function Registration() {
                     placeholder="Confirme a senha"
                     value={formData.pass2}
                     onChange={handleInputChange}
-                    required
+                />
+                {/* Input para upload da imagem de perfil */}
+                <input
+                    type="file"
+                    name="profileImage"
+                    accept="image/*"
+                    onChange={handleImageChange}
                 />
                 <Button className={styles.registration} type="submit" disabled={loading}>
                     {loading ? "Carregando..." : "Criar perfil"}

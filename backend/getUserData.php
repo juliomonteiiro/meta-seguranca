@@ -34,7 +34,7 @@ if (!empty($email)) {
         if ($res && $res->num_rows > 0) {
             $user = $res->fetch_assoc();
             echo json_encode($user); // Retorna os dados do usuário
-        } else {
+        }    else {
             echo json_encode(["result" => "Usuário não encontrado."]);
         }
     } else {
