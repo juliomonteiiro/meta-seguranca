@@ -9,7 +9,7 @@ export function Home() {
 
     useEffect(() => {
         function handleResize() {
-            setIsMobile(window.innerWidth <= 600);
+            setIsMobile(window.innerWidth <= 639);
         }
 
         window.addEventListener('resize', handleResize);

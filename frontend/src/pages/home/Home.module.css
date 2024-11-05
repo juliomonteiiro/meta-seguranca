@@ -1,6 +1,5 @@
 .HomeContainer {
     width: 100%;
-    height: 80vh;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -10,21 +9,21 @@
     width: 100%;
     padding: 5%;
     position: absolute;
-    top: 80%;
+    top: 70%;
     transform: translateY(-40%);
     display: flex;
     flex-direction: column;
 }
 
 .Title h1 {
-    font-size: 5vw;
+    font-size: 6vw;
     font-weight: 900;
     color: #fff;
 }
 
 .Title h2 {
     width: 90%;
-    font-size: 3vh;
+    font-size: 5vw;
     font-weight: 200;
     color: #fff;
     margin-top: 10px;
@@ -37,3 +36,16 @@
     transform: translateY(-50%);
 }
 
+@media (min-width: 640px){
+    .Title {
+        top: 55%;
+    }
+
+    .Title h1 {
+        font-size: 4vw;
+    }
+    
+    .Title h2 {
+        font-size: 3vw;
+    }
+}
