@@ -3,8 +3,6 @@ import './home.css';
 import backgroundImage from '../../assets/images/bg-img.png'
 import { Doubt } from '../../components/doubt/doubt';
 
-
-
 export function Home() {
     return (
 

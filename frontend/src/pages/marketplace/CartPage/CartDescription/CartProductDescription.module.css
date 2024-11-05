@@ -1,0 +1,45 @@
+.CartProductDescription {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.CartProductDescriptionTitle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.CartProductDescription h2 {
+  font-size: 15px;
+  color: #4e4848;
+  font-weight: 400;
+}
+
+.CartProductDescription h3 {
+  font-size: 14px;
+  color: #4e4848;
+  font-weight: 600;
+}
+
+.CartProductDescriptionValues{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media (min-width: 500px) {
+  .CartProductDescriptionValues{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 700px) {
+  .CartProductDescription {
+    flex-direction: row;
+  }
+}

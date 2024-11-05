@@ -1,0 +1,35 @@
+.SelectContainer {
+  width: 150px;
+  height: 35px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(112, 107, 107, 0.35);
+  padding: 1px;
+  border-radius: 4px;
+}
+
+.CartPageSelectNumber {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  background-color: #d9d9d9;
+  padding: 4px;
+  border-radius: 5px;
+}
+
+.CartPageNumber h1 {
+  display: none;
+}
+
+.CartPageNumber {
+  width: 150px;
+}
+
+.CartPageButton {
+  width: 20px;
+  height: 20px;
+}
