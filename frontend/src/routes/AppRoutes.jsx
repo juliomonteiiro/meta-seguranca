@@ -10,8 +10,16 @@ import { Marketplace } from '../pages/marketplace/marketplace';
 import { ProductPage } from '../pages/marketplace/ProductPage/ProductPage';
 import { Registration } from '../pages/registration/registration.page';
 import CartPage from '../pages/marketplace/CartPage/CartPage';
+import { Login } from '../pages/login/login.page';
+import { ForgotPassword } from '../pages/forgot-password/forgot-password.page';
+import { RedefinePassword } from '../pages/redefine-password/redefine-password.page';
+import Profile from '../pages/Profile/Profile'; // Importando a página de perfil
+import { useAuth } from '../context/AuthContext';
+
 
 const AppRoutes = () => {
+  const { isLoggedIn } = useAuth();
+
   return (
     <Routes>
       {/* Rota para a versão "one-page" */}
@@ -23,7 +31,7 @@ const AppRoutes = () => {
           <Productbar />
           <About />
           <Marketplace />
-          <Budget/>
+          <Budget />
         </div>
       } />
 
@@ -33,8 +41,18 @@ const AppRoutes = () => {
       <Route path="/products" element={<Marketplace />} />
       <Route path="/contact" element={<Budget id="contato" />} />
       <Route path="/registration" element={<Registration />} />
+      <Route path="/Cart" element={<CartPage />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route path="/redefine-password/" element={<RedefinePassword />} />
       <Route path="/ProductPage" element={<ProductPage />} />
-      <Route path="/Cart" element={<CartPage />} /> {/* Rota para CartPage */}
+      
+      {/* Rota para o perfil - protegida */}
+      <Route 
+        path="/profile" 
+        element={isLoggedIn ? <Profile /> : <Navigate to="/login" />} 
+      />
+
     </Routes>
   );
 };

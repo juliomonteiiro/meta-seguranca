@@ -6,36 +6,53 @@ header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
 $con = new mysqli("localhost", "root", "", "meta-seguranca");
 
-if(mysqli_connect_error()){
-    echo mysqli_connect_error();
+if (mysqli_connect_error()) {
+    echo json_encode(["result" => mysqli_connect_error()]);
     exit();
-} else {
+} 
 
-    $eData = file_get_contents("php://input");
-    $dData = json_decode($eData, true);
+$user = $_POST['user'] ?? '';
+$email = $_POST['email'] ?? '';
+$pass = $_POST['pass'] ?? '';
+$cpf = $_POST['cpf'] ?? '';  
+$phone = $_POST['phone'] ?? '';
+$birthdate = $_POST['birthdate'] ?? '';
+$profileImage = $_FILES['profileImage'] ?? null;
 
-    $user = $dData['user'];
-    $email = $dData['email'];
-    $pass = $dData['pass'];
+$result = "";        
 
-    $result = "";        
+if ($user !== "" && $email !== "" && $pass !== "" && $cpf !== "" && $phone !== "" && $birthdate !== "") {
+    $hashedPassword = password_hash($pass, PASSWORD_DEFAULT);
+    $profileImagePath = null;
 
+    // Verificar se uma imagem foi enviada e fazer o upload
+    if ($profileImage && $profileImage['error'] === UPLOAD_ERR_OK) {
+        $uploadDir = 'uploads/';
+        $fileExtension = pathinfo($profileImage['name'], PATHINFO_EXTENSION);
+        $profileImagePath = $uploadDir . uniqid() . '.' . $fileExtension;
 
-    if($user != "" && $email != "" && $pass != ""){
-        $sql = "INSERT INTO usuarios(nome, email, senha) VALUES('$user', '$email', '$pass')";
-        $res = mysqli_query($con, $sql);
-        
-        if($res){
-            $result = "Usuário cadastrado com sucesso!";
-        } else {
-            $result = "Erro ao cadastrar usuário: " . mysqli_error($con);
+        if (!move_uploaded_file($profileImage['tmp_name'], $profileImagePath)) {
+            echo json_encode(["result" => "Erro ao fazer upload da imagem de perfil"]);
+            exit();
         }
-    } else {
-        $result = "Todos os campos são obrigatórios.";
     }
-    $con->close();
-    $response = array("result" => $result);
-    echo json_encode($response);
+
+    $sql = "INSERT INTO usuarios (nome, email, senha, cpf, telefone, data_nasc, foto_perfil) VALUES ('$user', '$email', '$hashedPassword', '$cpf', '$phone', '$birthdate', '$profileImagePath')";
+    $res = mysqli_query($con, $sql);
+
+    if ($res) {
+        $result = "Usuário cadastrado com sucesso!";
+    } else {
+        $result = "Erro ao cadastrar usuário: " . mysqli_error($con);
+    }
+} else {
+    $result = "Todos os campos são obrigatórios.";
 }
 
+$con->close();
+echo json_encode(["result" => $result]);
+
+
+
 ?>
+ 
