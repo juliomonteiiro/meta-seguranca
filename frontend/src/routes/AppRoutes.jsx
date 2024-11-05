@@ -13,7 +13,7 @@ import CartPage from '../pages/marketplace/CartPage/CartPage';
 import { Login } from '../pages/login/login.page';
 import { ForgotPassword } from '../pages/forgot-password/forgot-password.page';
 import { RedefinePassword } from '../pages/redefine-password/redefine-password.page';
-import Profile from '../pages/Profile/Profile'; // Importando a página de perfil
+import Profile from '../pages/Profile/Profile';
 import { useAuth } from '../context/AuthContext';
 import AddProduct from '../pages/marketplace/AddProduct';
 

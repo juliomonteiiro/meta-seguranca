@@ -1,9 +1,46 @@
 .CartPageContainer {
     height: 100vh;
+    width: 100%;
     padding-top: 90px;
     background-color: #d9d9d9;
     display: flex;
     align-items: center;
     flex-direction: column;
   }
+
+.CartPageEmpty{
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.CartPageEmpty img{
+  width: 22vw;
+  transition: background-color 0.5s ease, transform 0.5s ease;
+}
+
+.CartPageEmpty img:hover{
+  transform: scale(1.05);
+}
+
+.CartPageEmpty h1{
+  color: black;
+  font-weight: 400;
+  font-size: 4vw;
+}
+
+@media (min-width: 800px){
+  .CartPageEmpty img{
+    width: 17vw;
+  }
   
+  .CartPageEmpty h1{
+    color: black;
+    font-weight: 400;
+    font-size: 2vw;
+  }  
+}
