@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
-import "./doubt.css";
-import { Button } from "../form/button/index";
+import styles from "./doubt.module.css"; 
 import duvida from '../../assets/images/duvida.png';
 
 export function Doubt() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  useEffect(() => {
+    const handleWhatsapp = () =>{
+    window.open('https://mail.google.com/mail/u/0/#inbox');
+    }
+
+    useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
@@ -18,18 +21,20 @@ export function Doubt() {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+    }, []);
 
   return (
     <>
-      {windowWidth <= 600 ? (
-        <a href="/outra-tela" className="Doubt-icon">
+      {windowWidth <= 639 ? (
+        <div className={styles["Doubt-icon"]} onClick={handleWhatsapp}>
           <img src={duvida} alt="Ícone de dúvida" />
-        </a>
+        </div>
       ) : (
-        <div className="Container">
+        <div className={styles.Container}>
           <p>Tem alguma dúvida ou quer saber mais a respeito?</p>
-          <Button>Fale Conosco</Button>
+          <div className={styles.ButtonWhatsapp} onClick={handleWhatsapp}>
+            <h1>Entrar em contato</h1>
+          </div>
         </div>
       )}
     </>

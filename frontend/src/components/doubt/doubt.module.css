@@ -1,0 +1,50 @@
+.Container {
+    display: flex;
+    padding: 10px 20px;
+    background-color: #C62733;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    color: #F5F5F5;
+    gap: 20px;
+}
+
+.Container p{
+    font-size: 1.5vw;
+}
+
+.ButtonWhatsapp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: #e5e5e5;
+}
+
+.ButtonWhatsapp h1{
+    font-size: 1vw;
+    color: #6c757d;
+}
+
+.Doubt-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #C62733;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    right: 10px;
+    transform: translateY(-50%);
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.Doubt-icon img {
+    width: 40px;
+    height: 40px;
+}
+
