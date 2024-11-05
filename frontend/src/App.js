@@ -1,9 +1,9 @@
-// src/App.jsx
 import React from 'react';
-import { BrowserRouter as Router, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/footer';
-import AppRoutes from './routes/AppRoutes'; // Importing the routes
+import { AuthProvider } from './context/AuthContext'; 
+import AppRoutes from './routes/AppRoutes'; // Importando as rotas
 
 const App = () => {
   const location = useLocation();
@@ -13,6 +13,7 @@ const App = () => {
     '/registration',
     '/login',
     '/forgot-password',
+    '/profile',
     '/redefine-password/:token' // Use a pattern to match the token in the URL
   ];
 
@@ -22,17 +23,13 @@ const App = () => {
 
   return (
     <div>
+      <AuthProvider>
       {!shouldHideNavbarFooter && <Navbar />} {/* Hide Navbar on specific pages */}
       <AppRoutes />
       {!shouldHideNavbarFooter && <Footer />} {/* Hide Footer on specific pages */}
+      </AuthProvider>
     </div>
   );
 };
 
-const AppWrapper = () => (
-  <Router>
-    <App />
-  </Router>
-);
-
-export default AppWrapper;
+export default App; // Removido o AppWrapper e a instância de Router

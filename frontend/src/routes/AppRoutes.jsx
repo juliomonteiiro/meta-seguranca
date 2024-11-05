@@ -11,9 +11,12 @@ import { Registration } from '../pages/registration/registration.page';
 import { Login } from '../pages/login/login.page';
 import { ForgotPassword } from '../pages/forgot-password/forgot-password.page';
 import { RedefinePassword } from '../pages/redefine-password/redefine-password.page';
-
+import Profile from '../pages/Profile/Profile'; // Importando a página de perfil
+import { useAuth } from '../context/AuthContext';
 
 const AppRoutes = () => {
+  const { isLoggedIn } = useAuth();
+
   return (
     <Routes>
       {/* Rota para a versão "one-page" */}
@@ -25,7 +28,7 @@ const AppRoutes = () => {
           <Productbar />
           <About />
           <Marketplace />
-          <Budget/>
+          <Budget />
         </div>
       } />
 
@@ -39,6 +42,12 @@ const AppRoutes = () => {
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/redefine-password/" element={<RedefinePassword />} />
       <Route path="/product-page" element={<ProductPage />} />
+      
+      {/* Rota para o perfil - protegida */}
+      <Route 
+        path="/profile" 
+        element={isLoggedIn ? <Profile /> : <Navigate to="/login" />} 
+      />
     </Routes>
   );
 };

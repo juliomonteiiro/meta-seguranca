@@ -6,15 +6,35 @@
     width: 100vw;
     height: 100vh;
     text-align: center;
-    margin-top: 100px;
     background-image: url('../../assets/images/bg.jpeg');
     background-size: cover;
     background-position: center; 
-    margin-top: 0px;
     background-repeat: no-repeat; 
 }
 
- .registration{
+.form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    max-width: 700px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.055); /* Suavização do fundo */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+.addressFields {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os campos se movam para a próxima linha */
+    justify-content: space-between; /* Espacia os campos igualmente */
+    width: 100%; /* Assegura que ocupe a largura total */
+    margin-bottom: 10px; /* Espaço entre o grupo de campos de endereço e o próximo campo */
+}
+
+.registration {
     margin-top: 0.5rem;
     padding: 0.5rem;
     width: 30%;
@@ -26,33 +46,19 @@
     border: none;
 }
 
-.form{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    width: 90%;
-    max-width: 700px;
-    padding: 30px;
-    background-color: transparent;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    margin-top: 20px;
+.error {
+    color: red;
+}
+
+.success {
+    color: #22f33e;
+}
+
+h1 {
+    color: #fff;
+    font-size: 36px;
 }
 
 .login {
     color: #C62733;
-}
-
-.error{
-    color: red;
-}
-
-.success{
-    color: #22f33e;
-}
-
-h1{
-    color: #fff;
-    font-size: 36px;
 }
