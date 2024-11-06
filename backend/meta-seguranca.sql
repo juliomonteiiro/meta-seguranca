@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 05/11/2024 às 22:32
+-- Tempo de geração: 06/11/2024 às 02:29
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -63,7 +63,10 @@ INSERT INTO `produtos` (`id`, `nome`, `descricao`, `preco`, `categoria`, `imagem
 (1, 'Etiqueta Adesiva Control ID', 'Tag adesivo veicular da marca CONTROL ID frequência 125mhz. Específico para uso em antenas da marca CONTROL ID.', 10.00, 'Tag', 'tag.png'),
 (2, 'Controle de proximidade Intelbras', 'Tag RFID passivo somente leitura com furo para ser usado como chaveiro. Possui código único pré-gravado de 64bits.', 15.00, 'Chaveiro', 'chaveiro.png'),
 (3, 'Etiqueta Adesiva Control ID', 'Tag adesivo veicular da marca CONTROL ID frequência 125mhz. Específico para uso em antenas da marca CONTROL ID.', 10.00, 'Tag', 'tag.png'),
-(4, 'Controle de proximidade Intelbras', 'Tag RFID passivo somente leitura com furo para ser usado como chaveiro. Possui código único pré-gravado de 64bits.', 15.00, 'Chaveiro', 'chaveiro.png');
+(4, 'Controle de proximidade Intelbras', 'Tag RFID passivo somente leitura com furo para ser usado como chaveiro. Possui código único pré-gravado de 64bits.', 15.00, 'Chaveiro', 'chaveiro.png'),
+(6, 'Tag veicular - Nice ', 'A Tag Veícular Linear Nice CR5-A é responsável em habilitar de forma automatizada a entrada de veículos autorizados no ambiente que está sendo resguardado por equipamentos de controle de acesso. Adquira já para o seu condomínio ou empresa.', 8.00, 'Tag', '1730845923353.jpg'),
+(7, 'Chaveiro de Proximidade - Nice', 'O Chaveiro de Proximidade foi desenvolvido para utilização nos sistemas de controle de acesso em condomínios, integrado com equipamentos desenvolvidos pela Nice Brasil. Proporcionam maior comodidade e segurança aos usuários do sistema com a identificação do usuário e/ou abertura do portão ou cancela com a uma distância de até 30cm da leitora.', 12.00, 'Chaveiro', '1730845997187.jpg'),
+(8, 'Cartão de proximidade - Control ID', ' Os cartões de proximidade comercializados pela Control iD são ideias para uma solução confiável de controle de acesso por proximidade. Com opções disponíveis que utilizam as tecnologias ASK 125 kHZ e MIFARE, eles são uma ótima opção para ambientes corporativos, edifícios comerciais e locais de grande circulação de pessoas onde o controle se faz necessário.', 15.00, 'Eletrônicos', '1730846137508.jpg');
 
 -- --------------------------------------------------------
 
@@ -90,7 +93,10 @@ INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `foto_perfil`, `cpf`, `t
 (1, 'julio', 'jsilva@multi360.com.br', '1', NULL, '', '', NULL),
 (2, 'Julio Alexsandro Monteiro da Silva', 'julioalexsandro.monteiro13@gmail.com', '$2y$10$yDcLZb.QZViEyCUCoYUPDe3VqR0ejavVFrEu3CpPPsg0W9ebODNZ2', 'uploads/jm.png', '37859235897', '19991971956', '2005-10-13'),
 (3, 'Pafaro', 'pafarinho123@gmail.com', '$2y$10$wdNlNZZmdCVBU8QE90B5K.56qyRuEkJvm3QN7Cmr/SyJbvOEKYTUu', NULL, '', '', NULL),
-(28, 'dsa', 'julioa@gmail.com', '$2y$10$dQmCYdbRZv3dgsEPV8xq4u9GkU5Xtgkik.gia5cGu2p3cusoQqQBi', 'uploads/672a21ce43265.png', '12312312312', '12213122112', '2000-10-10');
+(28, 'dsa', 'julioa@gmail.com', '$2y$10$dQmCYdbRZv3dgsEPV8xq4u9GkU5Xtgkik.gia5cGu2p3cusoQqQBi', 'uploads/672a21ce43265.png', '12312312312', '12213122112', '2000-10-10'),
+(29, 'André Dantas', 'andreluissousaa10@gmail.com', '$2y$10$0mGHIe0kYdbOxFJg6WIbAujZLulRO7zD3CtH9wTmV1zcyVb0Hwq4S', 'uploads/672a9f20ed74d.png', '52958920852', '19999442654', '2006-02-07'),
+(30, 'João Belai', 'joaopbelai@gmail.com', '$2y$10$wla61hTHYW8a6OOJHITfCe2MuS3d3vvF6WXUYI/IHJxk7m9Hhliy2', 'uploads/672aa09d5a1be.png', '48914771806', '19971547538', '2006-03-14'),
+(31, 'Hortência Monteiro', 'hortenciamonteiro.23@gmail.com', '$2y$10$y0.z/MyLyUhJRIe/QHZwnu5gBUV/xouYrMnhlJCOEzWxy2MsrWLni', 'uploads/horty.png', '31378619854', '19994718351', '1983-10-23');
 
 --
 -- Índices para tabelas despejadas
@@ -129,13 +135,13 @@ ALTER TABLE `orcamentos`
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

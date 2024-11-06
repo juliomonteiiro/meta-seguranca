@@ -7,6 +7,10 @@
     gap: 15px;
 }
 
+productImg{
+    max-height: 100px;
+}
+
 .Market-items {
     padding: 5% 2%;
     display: flex;
@@ -29,6 +33,7 @@
 
 .Market-items img {
     width: 200px;
+    max-height: 100px;
 }
 
 .Market-items h2 {

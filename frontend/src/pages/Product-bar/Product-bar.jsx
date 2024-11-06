@@ -44,15 +44,15 @@ export function Productbar() {
                         <div className="Product" key={product.id}>
                         <img src={product.image} alt=""/>
                         <h2>{product.title}</h2>
-                        <div className="Button-product" onClick={() => window.location.href = product.link}>
+                        {/* <div className="Button-product" onClick={() => window.location.href = product.link}>
                             <p>Veja Mais</p>
                             <img src={Arrow} alt=""/>
-                        </div>
+                        </div> */}
                     </div>
                 ))}
             </div>
             <div className="All">
-                <Link to="/">Ver todos...</Link>
+                <Link to="/products">Ver todos...</Link>
             </div>
         </div>
     )

@@ -6,7 +6,7 @@ export function ProductList({ products, onProductClick }) {  // Recebe 'onProduc
         <div className="Marketplace-list">
             {products.map((product) => (
                 <div className="Market-items" key={product.id}>
-                    <img src={product.image} alt={product.title} />
+                    <img src={product.image}  alt={product.title} />
                     <h2>{product.title}</h2>
                     <p>{product.price}</p>
                     <div

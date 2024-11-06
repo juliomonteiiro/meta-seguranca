@@ -54,7 +54,7 @@ export function AddProduct() {
       const data = await response.json();
       if (response.ok) {
         alert("Produto adicionado com sucesso!");
-        navigate("/marketplace");
+        navigate("/products");
       } else {
         alert("Erro ao adicionar produto: " + data.message);
       }
