@@ -19,19 +19,18 @@ $password = $dData['password'];
 $result = "";        
 
 if ($token != "" && $password != "") {
-    // Escapar valores para evitar SQL Injection
+
     $token = mysqli_real_escape_string($con, $token);
     $password = mysqli_real_escape_string($con, $password);
 
-    // Verifique se o token é válido
+
     $sql = "SELECT * FROM usuarios WHERE reset_token='$token'";
     $res = mysqli_query($con, $sql);
 
     if ($res && mysqli_num_rows($res) > 0) {
-        // Hash da nova senha
+
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-        // Atualize a senha no banco de dados e remova o token
         $sql = "UPDATE usuarios SET senha='$hashedPassword', reset_token=NULL WHERE reset_token='$token'";
         $updateRes = mysqli_query($con, $sql);
 
@@ -49,12 +48,7 @@ if ($token != "" && $password != "") {
 
 $con->close();
 
-// Debug: Output da resposta antes de retornar JSON
-// var_dump($result);  // Adicione isso para verificar o conteúdo da resposta
 $response = array("result" => $result);
-
-// Debug: Echo a resposta para ver se é JSON
-// echo json_encode($response);
 
 echo json_encode($response);
 ?>

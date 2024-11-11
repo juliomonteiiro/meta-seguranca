@@ -1,14 +1,14 @@
 import { Button } from "../../components/form/button";
 import { InputText } from "../../components/form/input";
 import { useState, useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom"; // Importar o hook useNavigate
+import { useNavigate, Link } from "react-router-dom"; 
 import styles from "./forgot-password.module.css";
 
 export function ForgotPassword() {
     const [email, setEmail] = useState("");
     const [error, setError] = useState("");
     const [msg, setMsg] = useState("");
-    const navigate = useNavigate(); // Hook para redirecionamento
+    const navigate = useNavigate(); 
 
     useEffect(() => {
         if (msg) {
@@ -30,7 +30,7 @@ export function ForgotPassword() {
             return;
         }
 
-        const url = "http://localhost/backend/forgot-password.php"; // Endpoint para redefinir senha
+        const url = "http://localhost/backend/forgot-password.php"; 
         const headers = {
             "Accept": "application/json",
             "Content-Type": "application/json"
@@ -45,10 +45,8 @@ export function ForgotPassword() {
             .then((response) => response.json())
             .then((response) => {
                 setMsg(response.result);
-                
-                // Quando o redirecionamento for bem-sucedido, o usuário é direcionado para a página de redefinição
+
                 if (response.result.includes("redirecionado")) {
-                    // Aqui é o redirecionamento para a página de redefinição de senha
                     navigate(`/redefine-password/${email}`);
                 }
             })

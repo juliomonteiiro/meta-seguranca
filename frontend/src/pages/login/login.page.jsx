@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react'; // Remova useContext
+import React, { useState, useEffect } from 'react'; 
 import { Button } from "../../components/form/button";
 import { InputText } from "../../components/form/input";
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../context/AuthContext'; // Mantenha esta importação
+import { useAuth } from '../../context/AuthContext';
 import styles from "./login.module.css";
 
 export function Login() {
-    const { login } = useAuth(); // Obtém a função de login do contexto
+    const { login } = useAuth(); 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
@@ -51,12 +51,12 @@ export function Login() {
             "Accept": "application/json",
             "Content-Type": "application/json"
         };
-        const data = { email, senha: password }; // Corrige a chave para 'senha', conforme necessário
+        const data = { email, senha: password }; 
         
         fetch(url, {
             method: "POST",
             headers,
-            credentials: 'include', // Necessário para enviar cookies de sessão
+            credentials: 'include', 
             body: JSON.stringify(data)
         })
             .then((response) => {
@@ -66,12 +66,11 @@ export function Login() {
                 return response.json();
             })
             .then((response) => {
-                // Verifica se o login foi bem-sucedido
                 if (response.result === "success") {
-                    login({ email }); // Atualiza o estado de login no contexto
-                    navigate("/meta-seguranca"); // Redireciona após o login bem-sucedido
+                    login({ email }); 
+                    navigate("/meta-seguranca");
                 } else {
-                    setError(response.message); // Mostra a mensagem de erro específica
+                    setError(response.message); 
                 }
             })
             .catch((err) => {

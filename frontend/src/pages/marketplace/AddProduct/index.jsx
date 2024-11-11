@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import styles from "./AddProduct.module.css"; // Importando o CSS Module
+import styles from "./AddProduct.module.css"; 
 import { InputText } from "../../../components/form/input";
 import { Button } from "../../../components/form/button";
 import { TextArea } from "../../../components/form/text-area";
@@ -21,7 +21,7 @@ export function AddProduct() {
       setImagem(file);
     } else {
       alert("Por favor, selecione uma imagem válida.");
-      setImagem(null); // Limpa a imagem se não for válida
+      setImagem(null); 
     }
   };
 
@@ -119,7 +119,7 @@ export function AddProduct() {
               type="file"
               id="imagem"
               onChange={handleFileChange}
-              accept="image/*" // Permitindo somente imagens
+              accept="image/*" 
               required
             />
           </div>

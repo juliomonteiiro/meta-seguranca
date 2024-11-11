@@ -13,17 +13,16 @@ if ($con->connect_error) {
     exit();
 }
 
-// Verifique se a sessão do usuário está ativa
 if (!isset($_SESSION['user_email'])) {
     echo json_encode(["result" => "Usuário não autenticado."]);
     exit();
 }
 
 $email = $_SESSION['user_email'];
-$stmt = null; // Inicialize $stmt como null para evitar o erro
+$stmt = null;
 
 if (!empty($email)) {
-    // Usando prepared statements
+
     $stmt = $con->prepare("SELECT * FROM usuarios WHERE email=?");
     if ($stmt) {
         $stmt->bind_param("s", $email);
@@ -33,14 +32,13 @@ if (!empty($email)) {
         if ($res && $res->num_rows > 0) {
             $user = $res->fetch_assoc();
             
-            // Adicione o caminho completo para a imagem de perfil
             if (!empty($user['foto_perfil'])) {
                 $user['foto_perfil_url'] = "http://localhost/backend/" . $user['foto_perfil'];
             } else {
-                $user['foto_perfil_url'] = null; // Ou defina um caminho para uma imagem padrão, se desejar
+                $user['foto_perfil_url'] = null;
             }
             
-            echo json_encode($user); // Retorna os dados do usuário com a URL da imagem de perfil
+            echo json_encode($user);
         } else {
             echo json_encode(["result" => "Usuário não encontrado."]);
         }
@@ -52,7 +50,7 @@ if (!empty($email)) {
 }
 
 if ($stmt) {
-    $stmt->close(); // Fechar a declaração apenas se $stmt foi criado com sucesso
+    $stmt->close(); 
 }
-$con->close(); // Fechar a conexão
+$con->close(); 
 ?>

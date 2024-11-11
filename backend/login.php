@@ -28,7 +28,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             session_start();
             $_SESSION['user_email'] = $usuario['email'];
             
-            // Log para confirmar que a sessão foi configurada
             error_log("Login bem-sucedido. E-mail salvo na sessão: " . $_SESSION['user_email']);
             
             echo json_encode(["result" => "success", "message" => "Login realizado com sucesso!"]);

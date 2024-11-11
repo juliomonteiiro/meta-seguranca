@@ -1,4 +1,3 @@
-// src/routes/AppRoutes.js
 import React from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import { Budget } from '../pages/budget/budget';
@@ -23,7 +22,6 @@ const AppRoutes = () => {
 
   return (
     <Routes>
-      {/* Rota para a versão "one-page" */}
       <Route path="/" element={<Navigate to="/meta-seguranca" />} />
       <Route path="/meta-seguranca" element={
         <div className="container">
@@ -36,7 +34,7 @@ const AppRoutes = () => {
         </div>
       } />
 
-      {/* Rotas individuais para cada página */}
+      
       <Route path="/services" element={<Services />} />
       <Route path="/about" element={<About />} />
       <Route path="/products" element={<Marketplace />} />
@@ -49,7 +47,7 @@ const AppRoutes = () => {
       <Route path="/ProductPage" element={<ProductPage />} />
       <Route path="/addproduct" element={<AddProduct/>} />
       
-      {/* Rota para o perfil - protegida */}
+
       <Route 
         path="/profile" 
         element={isLoggedIn ? <Profile /> : <Navigate to="/login" />} 

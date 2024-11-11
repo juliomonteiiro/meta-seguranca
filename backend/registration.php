@@ -25,7 +25,6 @@ if ($user !== "" && $email !== "" && $pass !== "" && $cpf !== "" && $phone !== "
     $hashedPassword = password_hash($pass, PASSWORD_DEFAULT);
     $profileImagePath = null;
 
-    // Verificar se uma imagem foi enviada e fazer o upload
     if ($profileImage && $profileImage['error'] === UPLOAD_ERR_OK) {
         $uploadDir = 'uploads/';
         $fileExtension = pathinfo($profileImage['name'], PATHINFO_EXTENSION);
