@@ -1,0 +1,82 @@
+/* CreateProductCard.module.css */
+
+.cardContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    border-radius: 8px;
+    overflow-y: auto;
+  }
+  
+  .cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .cardHeader h2 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  
+  .closeButton {
+    border: none;
+    background-color: transparent;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    color: #333;
+  }
+  
+  .closeButton:hover {
+    color: #e74c3c;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .formGroup {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+
+  select {
+    width: 80%;
+    height: 90%;
+    padding: 10px;
+    border-style: none;
+    border-radius: 53px;
+    background-color: #D9D9D9;
+    color: #706B6B;
+    padding-left: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+}
+  
+  .addButton {
+    margin-top: 1rem;
+    padding: 0.7rem;
+    width: 50%;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.addButton:hover {
+    background-color: #ca4949;
+}
+
+  
