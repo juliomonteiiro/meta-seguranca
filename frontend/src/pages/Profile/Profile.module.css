@@ -101,6 +101,15 @@ textarea.infoCard {
   transition: background-color 0.3s;
 }
 
+.editButton {
+  width: 40%; 
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
   .profileContainer {

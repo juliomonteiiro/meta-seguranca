@@ -14,7 +14,7 @@ import { ForgotPassword } from '../pages/forgot-password/forgot-password.page';
 import { RedefinePassword } from '../pages/redefine-password/redefine-password.page';
 import Profile from '../pages/Profile/Profile';
 import { useAuth } from '../context/AuthContext';
-import AddProduct from '../pages/marketplace/AddProduct';
+import AdminProduct from '../pages/Admin/AdminProduct/AdminProduct';
 
 
 const AppRoutes = () => {
@@ -45,13 +45,18 @@ const AppRoutes = () => {
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/redefine-password/:email" element={<RedefinePassword />} />
       <Route path="/ProductPage" element={<ProductPage />} />
-      <Route path="/addproduct" element={<AddProduct/>} />
       
 
       <Route 
         path="/profile" 
         element={isLoggedIn ? <Profile /> : <Navigate to="/login" />} 
       />
+
+      <Route 
+        path="/edit-product" 
+        element={isLoggedIn ? <AdminProduct /> : <Navigate to="/login" />} 
+      />
+
 
     </Routes>
   );
