@@ -53,7 +53,7 @@ const AppRoutes = () => {
       />
 
       <Route 
-        path="/edit-product" 
+        path="/admin-product" 
         element={isLoggedIn ? <AdminProduct /> : <Navigate to="/login" />} 
       />
 

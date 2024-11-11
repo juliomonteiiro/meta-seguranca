@@ -18,6 +18,7 @@ const App = () => {
     '/forgot-password',
     '/profile',
     '/addproduct',
+    '/admin-product',
     '/redefine-password/:email' // Use a pattern to match the token in the URL
   ];
 
