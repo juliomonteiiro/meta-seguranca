@@ -17,7 +17,7 @@ const CartPage = () => {
   if (cartItems.length === 0) {
     return(
         <div className={styles.CartPageEmpty}>
-            <img src={CartImage} onClick={BuyProducts}/>
+            <img src={CartImage} onClick={BuyProducts} alt='foto'/>
             <h1>Nenhum produto no carrinho</h1>
         </div>
     )

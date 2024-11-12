@@ -1,6 +1,5 @@
 import React from "react"; 
 import "./Product-bar.css";
-import Arrow from "../../assets/images/right-arrow.png";
 import Chaveiro from "../../assets/images/chaveiro.png";
 import Tag from "../../assets/images/tag.png";
 import { Link } from "react-router-dom";
