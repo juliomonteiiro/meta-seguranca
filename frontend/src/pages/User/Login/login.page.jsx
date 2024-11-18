@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'; 
-import { Button } from "../../components/form/button";
-import { InputText } from "../../components/form/input";
+import { Button } from "../../../components/form/button";
+import { InputText } from "../../../components/form/input";
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../context/AuthContext';
+import { useAuth } from '../../../context/AuthContext';
 import styles from "./login.module.css";
 
 export function Login() {
@@ -46,7 +46,7 @@ export function Login() {
             return;
         }
 
-        const url = "http://localhost/backend/login.php";
+        const url = "http://localhost:3001/api/login";
         const headers = {
             "Accept": "application/json",
             "Content-Type": "application/json"

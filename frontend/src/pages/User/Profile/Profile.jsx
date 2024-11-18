@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import styles from './Profile.module.css';
-import { useAuth } from '../../context/AuthContext';
+import { useAuth } from '../../../context/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
-import { Button } from '../../components/form/button';
-import { InputText } from '../../components/form/input';
+import { Button } from '../../../components/form/button';
+import { InputText } from '../../../components/form/input';
 
 const Profile = () => {
     const [userData, setUserData] = useState(null);

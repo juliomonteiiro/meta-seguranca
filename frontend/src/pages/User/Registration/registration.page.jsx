@@ -1,5 +1,5 @@
-import { Button } from "../../components/form/button";
-import { InputText } from "../../components/form/input";
+import { Button } from "../../../components/form/button";
+import { InputText } from "../../../components/form/input";
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import styles from "./registration.module.css";

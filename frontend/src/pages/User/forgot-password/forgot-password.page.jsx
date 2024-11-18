@@ -1,5 +1,5 @@
-import { Button } from "../../components/form/button";
-import { InputText } from "../../components/form/input";
+import { Button } from "../../../components/form/button";
+import { InputText } from "../../../components/form/input";
 import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom"; 
 import styles from "./forgot-password.module.css";

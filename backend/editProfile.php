@@ -28,7 +28,7 @@ if ($user !== "" && $phone !== "") {
     // Verificar se uma imagem foi enviada
     $profileImagePath = null;
     if ($profileImage && $profileImage['error'] === UPLOAD_ERR_OK) {
-        $uploadDir = 'uploads/';
+        $uploadDir = 'uploads/user/';
         $fileExtension = pathinfo($profileImage['name'], PATHINFO_EXTENSION);
         $profileImagePath = $uploadDir . uniqid() . '.' . $fileExtension;
 

@@ -1,5 +1,5 @@
-import { Button } from "../../components/form/button";
-import { InputText } from "../../components/form/input";
+import { Button } from "../../../components/form/button";
+import { InputText } from "../../../components/form/input";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom"; // Para pegar o e-mail da URL
 import styles from "./redefine-password.module.css";
