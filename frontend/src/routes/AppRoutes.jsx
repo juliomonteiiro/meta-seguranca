@@ -7,12 +7,12 @@ import About from '../pages/about/about.page';
 import { Productbar } from '../pages/Product-bar/Product-bar';
 import { Marketplace } from '../pages/marketplace/marketplace';
 import { ProductPage } from '../pages/marketplace/ProductPage/ProductPage';
-import { Registration } from '../pages/registration/registration.page';
+import { Registration } from '../pages/User/Registration/registration.page';
 import CartPage from '../pages/marketplace/CartPage/CartPage';
-import { Login } from '../pages/login/login.page';
-import { ForgotPassword } from '../pages/forgot-password/forgot-password.page';
-import { RedefinePassword } from '../pages/redefine-password/redefine-password.page';
-import Profile from '../pages/Profile/Profile';
+import { Login } from '../pages/User/Login/login.page';
+import { ForgotPassword } from '../pages/User/forgot-password/forgot-password.page';
+import { RedefinePassword } from '../pages/User/Redefine-Password/redefine-password.page';
+import Profile from '../pages/User/Profile/Profile';
 import { useAuth } from '../context/AuthContext';
 import AdminProduct from '../pages/Admin/AdminProduct/AdminProduct';
 

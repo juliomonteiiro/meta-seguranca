@@ -26,7 +26,7 @@ if ($user !== "" && $email !== "" && $pass !== "" && $cpf !== "" && $phone !== "
     $profileImagePath = null;
 
     if ($profileImage && $profileImage['error'] === UPLOAD_ERR_OK) {
-        $uploadDir = 'uploads/';
+        $uploadDir = 'uploads/user/';
         $fileExtension = pathinfo($profileImage['name'], PATHINFO_EXTENSION);
         $profileImagePath = $uploadDir . uniqid() . '.' . $fileExtension;
 

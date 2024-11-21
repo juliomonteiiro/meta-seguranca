@@ -6,7 +6,7 @@
     width: 100vw;
     height: 100vh;
     text-align: center;
-    background-image: url('../../assets/images/bg.jpeg');
+    background-image: url('../../../assets/images/bg.jpeg');
     background-size: cover;
     background-position: center; 
     background-repeat: no-repeat; 
