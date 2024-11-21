@@ -1,39 +1,42 @@
 const db = require('../db/config');
 const bcrypt = require('bcryptjs');
-const path = require('path');
-const jwt = require('jsonwebtoken');
 
-// Função para login de usuário
 const loginUser = (req, res) => {
     const { email, senha } = req.body;
 
     if (!email || !senha) {
-        return res.status(400).json({ message: 'E-mail e senha são obrigatórios.' });
+        return res.status(400).json({ result: 'erro', message: 'E-mail e senha são obrigatórios.' });
     }
 
     const sql = "SELECT * FROM usuarios WHERE email = ?";
     db.query(sql, [email], (err, results) => {
         if (err) {
-            return res.status(500).json({ message: "Erro ao verificar o usuário", error: err });
+            return res.status(500).json({ result: 'erro', message: 'Erro ao verificar o usuário', error: err });
         }
 
         if (results.length > 0) {
             const usuario = results[0];
 
             // Verificar se a senha fornecida é correta
-            if (bcrypt.compareSync(senha, usuario.senha)) {
-                // Gerar o token JWT (pode ser usado para autenticação posterior)
-                const token = jwt.sign({ id: usuario.id, email: usuario.email }, 'secretkey', { expiresIn: '1h' });
+            bcrypt.compare(senha, usuario.senha, (err, isMatch) => {
+                if (err) return res.status(500).json({ result: 'erro', message: 'Erro ao comparar senhas.' });
 
-                return res.json({
-                    message: "Login bem-sucedido",
-                    token: token
-                });
-            } else {
-                return res.status(400).json({ message: "Senha incorreta." });
-            }
+                if (isMatch) {
+                    // Salvar o e-mail e o id do usuário na sessão
+                    req.session.user_email = usuario.email;
+                    req.session.user_id = usuario.id;
+
+                    return res.json({
+                        result: 'success',
+                        message: 'Login realizado com sucesso!',
+                        user: { id: usuario.id, nome: usuario.nome, email: usuario.email }
+                    });
+                } else {
+                    return res.status(400).json({ result: 'erro', message: 'Senha incorreta.' });
+                }
+            });
         } else {
-            return res.status(404).json({ message: "Usuário não encontrado." });
+            return res.status(404).json({ result: 'erro', message: 'Usuário não encontrado.' });
         }
     });
 };
