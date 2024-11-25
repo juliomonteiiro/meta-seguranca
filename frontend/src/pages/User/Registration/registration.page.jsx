@@ -151,7 +151,7 @@ export function Registration() {
     return (
         <div className={styles.reg}>
             <form className={styles.form} onSubmit={handleSubmit}>
-                <h1>Cadastro</h1>
+                <h1 className={styles.title}>Cadastro</h1>
                 <p>
                     {msg ? (
                         <span className={styles.success}>{msg}</span>
