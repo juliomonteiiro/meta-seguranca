@@ -34,7 +34,7 @@ app.post('/api/login', loginUser);
 
 // Outras rotas...
 app.post('/api/register', registerUser);
-app.get('/api/user/:userId', getUserData);
+app.get('/api/userdata', getUserData);
 app.put('/api/user/:userId', editProfile);
 app.use('/uploads/products', express.static(path.join(__dirname, 'uploads', 'products')));
 app.use('/api', productRoutes);

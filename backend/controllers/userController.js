@@ -87,14 +87,14 @@ const checkEmail = (req, res) => {
 
 // Função para obter os dados do usuário
 const getUserData = (req, res) => {
-    const { userId } = req.params;
+    const { userEmail } = req.params;
 
-    if (!userId) {
+    if (!userEmail) {
         return res.status(400).json({ message: "ID de usuário não fornecido." });
     }
 
-    const sql = "SELECT * FROM usuarios WHERE id = ?";
-    db.query(sql, [userId], (err, results) => {
+    const sql = "SELECT * FROM usuarios WHERE email = ?";
+    db.query(sql, ['user_email'], (err, results) => {
         if (err) {
             return res.status(500).json({ message: "Erro ao obter dados do usuário", error: err });
         }
@@ -103,7 +103,7 @@ const getUserData = (req, res) => {
             const usuario = results[0];
             // Verificar se a foto de perfil existe
             if (usuario.foto_perfil) {
-                usuario.foto_perfil_url = `http://localhost:3001/uploads/user/${usuario.foto_perfil}`;
+                usuario.foto_perfil_url = `http://localhost:3001/${usuario.foto_perfil}`;
             } else {
                 usuario.foto_perfil_url = null;
             }
@@ -127,7 +127,7 @@ const registerUser = (req, res) => {
     let profileImagePath = null;
 
     if (profileImage) {
-        profileImagePath = `user/${profileImage}`;
+        profileImagePath = `uploads/user/${profileImage}`;
     }
 
     const sql = "INSERT INTO usuarios (nome, email, senha, cpf, telefone, data_nasc, foto_perfil) VALUES (?, ?, ?, ?, ?, ?, ?)";

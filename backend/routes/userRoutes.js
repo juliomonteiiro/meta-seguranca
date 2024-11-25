@@ -7,7 +7,7 @@ const { loginUser, checkUser, checkEmail, getUserData, registerUser, editProfile
 // Configuração do multer para armazenar a imagem de perfil
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        const uploadDir = path.join(__dirname, '..', 'uploads', 'user');
+        const uploadDir = path.join(__dirname, '..', 'uploads/', 'user/');
         cb(null, uploadDir);
     },
     filename: (req, file, cb) => {
@@ -27,7 +27,7 @@ router.post('/check_user', checkUser);
 router.post('/check_email', checkEmail);
 
 // Rota para obter os dados de um usuário
-router.get('/user/:userId', getUserData);
+router.get('/userdata', getUserData);
 
 // Rota para registrar um novo usuário
 router.post('/register', upload.single('profileImage'), registerUser);
