@@ -19,28 +19,28 @@ const Footer = () => {
             <h4>Menu</h4>
             <nav>
               <Link to="/">Início</Link>
-              <Link to="/servicos">Serviços</Link>
-              <Link to="/sobre">Sobre Nós</Link>
-              <Link to="/contato">Contato</Link>
+              <Link to="/services">Serviços</Link>
+              <Link to="/about">Sobre Nós</Link>
+              <Link to="/contact">Contato</Link>
             </nav>
           </div>
 
           <div className="footer-section">
             <h4>Produtos</h4>
             <nav>
-              <Link to="/cameras">Câmeras</Link>
-              <Link to="/sistemas">Sistemas</Link>
-              <Link to="/tags">Tags</Link>
-              <Link to="/produtos">Todos os Produtos</Link>
+              <Link to="/products">Chaveiros</Link>
+              <Link to="/products">Eletrônicos</Link>
+              <Link to="/products">Tags</Link>
+              <Link to="/products">Todos os Produtos</Link>
             </nav>
           </div>
 
           <div className="footer-section">
             <h4>Contato</h4>
             <div className="social-icons">
-              <Link to="/facebook" aria-label="Facebook"><FaFacebook /></Link>
-              <Link to="/whatsapp" aria-label="WhatsApp"><IoLogoWhatsapp /></Link>
-              <Link to="/telefone" aria-label="Telefone"><FaPhoneAlt /></Link>
+              <Link to="https://www.facebook.com/metasegurancaeletronica/?locale=pt_BRk" aria-label="Facebook"><FaFacebook /></Link>
+              <Link to="https://api.whatsapp.com/send/?phone=19981357968&text&type=phone_number&app_absent=0" aria-label="WhatsApp"><IoLogoWhatsapp /></Link>
+              <Link to="(19)98135-7968" aria-label="Telefone"><FaPhoneAlt /></Link>
               <Link to="/email" aria-label="Email"><FaEnvelope /></Link>
             </div>
           </div>
@@ -54,12 +54,12 @@ const Footer = () => {
               @{new Date().getFullYear()} Meta Segurança Eletrônica. Todos os direitos reservados.
             </p>
           </div>
-          <div className="footer-legal">
+          {/* <div className="footer-legal">
             <Link to="/termos">Termos & Condições</Link>
             <Link to="/privacidade">Privacidade</Link>
             <Link to="/seguranca">Segurança</Link>
             <Link to="/cookies">Declaração de Cookies</Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

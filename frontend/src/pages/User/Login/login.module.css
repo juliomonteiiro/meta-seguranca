@@ -26,7 +26,7 @@
     margin-top: 20px;
 }
 
-h1 {
+.title {
     color: #fff;
     font-size: 36px;
     margin-bottom: 20px;
@@ -59,3 +59,10 @@ h1 {
 p {
     text-align: center;
 }
+
+@media (max-width: 768px) {
+    .login {
+        width: 35%;
+        font-size: 16px;
+  }
+} 

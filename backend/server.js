@@ -12,46 +12,51 @@ const app = express();
 // Configuração do middleware para parsing de JSON
 app.use(bodyParser.json());
 
+// CORS
 const corsOptions = {
     origin: 'http://localhost:3000', // Frontend
-    methods: 'GET,POST',
+    methods: 'GET,POST,DELETE,PUT',
     allowedHeaders: 'Content-Type, Authorization',
-    credentials: true,  // Importante para enviar cookies com a requisição
+    credentials: true,  // Necessário para enviar cookies
 };
-
 app.use(cors(corsOptions));
 
 // Configuração de sessões
 app.use(session({
-    secret: 'secretkey',    // Chave secreta para assinar os cookies de sessão
-    resave: false,          // Não resalva a sessão se não houve alterações
-    saveUninitialized: true,// Não salva sessões não modificadas
-    cookie: { secure: false } // Defina `secure: true` para HTTPS (produção)
+    secret: 'secretkey',  
+    resave: false,         
+    saveUninitialized: true,
+    cookie: {
+        secure: false,  // Defina como false em desenvolvimento (caso esteja usando HTTP)
+        httpOnly: true, // Impede que o cookie seja acessado via JavaScript
+        maxAge: 1000 * 60 * 60 * 24 // Cookie expira após 1 dia
+    }
 }));
 
-// Rota de login (com sessões)
+
+// Middleware de verificação de autenticação
+const verifyAuth = (req, res, next) => {
+    if (!req.session.user_id) {
+        return res.status(401).json({ message: 'Usuário não autenticado' });
+    }
+    next();
+};
+
+// Rotas de login e perfil
 app.post('/api/login', loginUser);
-
-// Outras rotas...
 app.post('/api/register', registerUser);
-app.get('/api/user/:userId', getUserData);
-app.put('/api/user/:userId', editProfile);
-app.use('/uploads/products', express.static(path.join(__dirname, 'uploads', 'products')));
-app.use('/api', productRoutes);
-app.use('/api', budgetRoutes);
+app.get('/api/user', verifyAuth, getUserData);
+app.put('/api/user/:userId', verifyAuth, editProfile);
 
-// Função para verificar se o usuário está autenticado
+// Função para verificar a sessão
 app.get('/api/session', (req, res) => {
     if (req.session.user_email) {
-        return res.json({
-            message: "Usuário autenticado",
-            user_email: req.session.user_email
-        });
+        return res.json({ message: "Usuário autenticado", user_email: req.session.user_email });
     }
     return res.status(401).json({ message: "Usuário não autenticado" });
 });
 
-// Função para logout (destruir a sessão)
+// Logout
 app.post('/api/logout', (req, res) => {
     req.session.destroy((err) => {
         if (err) {
@@ -61,6 +66,24 @@ app.post('/api/logout', (req, res) => {
     });
 });
 
+app.get('/api/session', (req, res) => {
+    if (req.session.user_email) {
+        return res.json({
+            message: 'Usuário autenticado',
+            user_email: req.session.user_email
+        });
+    } else {
+        return res.status(401).json({ message: 'Usuário não autenticado' });
+    }
+});
+
+// Roteamento de Produtos e Orçamentos
+app.use('/api', productRoutes);
+app.use('/api', budgetRoutes);
+
+// Servindo arquivos estáticos
+app.use('/uploads/products', express.static(path.join(__dirname, 'uploads', 'products')));
+app.use('/uploads/user', express.static(path.join(__dirname, 'uploads', 'user')));
 
 const port = 3001;
 app.listen(port, () => {

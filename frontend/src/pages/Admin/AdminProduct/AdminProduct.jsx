@@ -100,17 +100,17 @@ export function AdminProduct() {
       const response = await fetch(`http://localhost:3001/api/products/${productId}`, {
         method: 'DELETE',
       });
-
+  
       if (!response.ok) {
         throw new Error('Erro ao excluir produto');
       }
-
+  
       setProducts((prevProducts) => prevProducts.filter((product) => product.id !== productId));
     } catch (error) {
       console.error('Erro ao excluir produto: ', error);
     }
   };
-
+  
   return (
     <div className={styles.container}>
       <h1>Gerenciamento de Produtos</h1>

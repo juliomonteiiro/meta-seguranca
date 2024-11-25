@@ -4,16 +4,19 @@ const bcrypt = require('bcryptjs');
 const loginUser = (req, res) => {
     const { email, senha } = req.body;
 
+    // Verificar se o email e a senha foram fornecidos
     if (!email || !senha) {
         return res.status(400).json({ result: 'erro', message: 'E-mail e senha são obrigatórios.' });
     }
 
+    // Consultar o banco de dados para encontrar o usuário com o email fornecido
     const sql = "SELECT * FROM usuarios WHERE email = ?";
     db.query(sql, [email], (err, results) => {
         if (err) {
             return res.status(500).json({ result: 'erro', message: 'Erro ao verificar o usuário', error: err });
         }
 
+        // Verificar se o usuário foi encontrado
         if (results.length > 0) {
             const usuario = results[0];
 
@@ -26,6 +29,7 @@ const loginUser = (req, res) => {
                     req.session.user_email = usuario.email;
                     req.session.user_id = usuario.id;
 
+                    // Retornar uma resposta de sucesso, incluindo informações do usuário
                     return res.json({
                         result: 'success',
                         message: 'Login realizado com sucesso!',
@@ -40,7 +44,6 @@ const loginUser = (req, res) => {
         }
     });
 };
-
 // Função para verificar se o nome de usuário já existe
 const checkUser = (req, res) => {
     const { user } = req.body;
@@ -87,32 +90,32 @@ const checkEmail = (req, res) => {
 
 // Função para obter os dados do usuário
 const getUserData = (req, res) => {
-    const { userId } = req.params;
-
-    if (!userId) {
-        return res.status(400).json({ message: "ID de usuário não fornecido." });
+    // Checando se o e-mail está presente na sessão
+    const email = req.session.user_email;
+  
+    if (!email) {
+      return res.status(401).json({ result: 'Usuário não autenticado.' });
     }
-
-    const sql = "SELECT * FROM usuarios WHERE id = ?";
-    db.query(sql, [userId], (err, results) => {
-        if (err) {
-            return res.status(500).json({ message: "Erro ao obter dados do usuário", error: err });
-        }
-
-        if (results.length > 0) {
-            const usuario = results[0];
-            // Verificar se a foto de perfil existe
-            if (usuario.foto_perfil) {
-                usuario.foto_perfil_url = `http://localhost:3001/uploads/user/${usuario.foto_perfil}`;
-            } else {
-                usuario.foto_perfil_url = null;
-            }
-            return res.json(usuario);
-        } else {
-            return res.status(404).json({ message: "Usuário não encontrado." });
-        }
+  
+    const query = 'SELECT * FROM usuarios WHERE email = ?';
+    
+    db.query(query, [email], (err, results) => {
+      if (err) {
+        console.error('Erro ao executar a consulta: ', err);
+        return res.status(500).json({ result: 'Erro ao consultar o banco de dados.' });
+      }
+  
+      if (results.length === 0) {
+        return res.status(404).json({ result: 'Usuário não encontrado.' });
+      }
+  
+      const user = results[0];
+      user.foto_perfil_url = user.foto_perfil ? `http://localhost:3001/${user.foto_perfil}` : null;
+  
+      return res.json(user);
     });
-};
+  };
+  
 
 // Função para registrar um novo usuário
 const registerUser = (req, res) => {

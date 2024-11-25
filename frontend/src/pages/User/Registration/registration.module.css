@@ -54,7 +54,7 @@
     color: #22f33e;
 }
 
-h1 {
+.title {
     color: #fff;
     font-size: 36px;
 }
@@ -62,3 +62,10 @@ h1 {
 .login {
     color: #C62733;
 }
+
+@media (max-width: 768px) {
+    .registration {
+        width: 40%;
+        font-size: 16px;
+    }
+  }

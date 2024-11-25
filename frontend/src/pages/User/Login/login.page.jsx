@@ -46,7 +46,7 @@ export function Login() {
             return;
         }
 
-        const url = "http://localhost:3001/api/login";
+        const url = "http://localhost/backend/login.php";
         const headers = {
             "Accept": "application/json",
             "Content-Type": "application/json"
@@ -82,7 +82,7 @@ export function Login() {
     return (
         <div className={styles.log}>
             <form className={styles.form} onSubmit={handleSubmit}>
-                <h1>Login</h1>
+                <h1 className={styles.title}>Login</h1>
                 <p>
                     {msg ? (
                         <span className={styles.success}>{msg}</span>

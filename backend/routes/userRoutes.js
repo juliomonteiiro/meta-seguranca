@@ -27,7 +27,7 @@ router.post('/check_user', checkUser);
 router.post('/check_email', checkEmail);
 
 // Rota para obter os dados de um usuário
-router.get('/user/:userId', getUserData);
+router.get('/user', getUserData);
 
 // Rota para registrar um novo usuário
 router.post('/register', upload.single('profileImage'), registerUser);

@@ -6,7 +6,7 @@ export function Doubt() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
     const handleWhatsapp = () =>{
-    window.open('https://mail.google.com/mail/u/0/#inbox');
+    window.open('https://api.whatsapp.com/send/?phone=19981357968&text&type=phone_number&app_absent=0');
     }
 
     useEffect(() => {
