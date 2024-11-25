@@ -48,6 +48,7 @@ app.post('/api/register', registerUser);
 app.get('/api/user', verifyAuth, getUserData);
 app.put('/api/user/:userId', verifyAuth, editProfile);
 
+
 // Função para verificar a sessão
 app.get('/api/session', (req, res) => {
     if (req.session.user_email) {

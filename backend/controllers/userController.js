@@ -130,7 +130,7 @@ const registerUser = (req, res) => {
     let profileImagePath = null;
 
     if (profileImage) {
-        profileImagePath = `user/${profileImage}`;
+        profileImagePath = `uploads/user/${profileImage}`;
     }
 
     const sql = "INSERT INTO usuarios (nome, email, senha, cpf, telefone, data_nasc, foto_perfil) VALUES (?, ?, ?, ?, ?, ?, ?)";
